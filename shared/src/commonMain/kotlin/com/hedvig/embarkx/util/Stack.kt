@@ -1,7 +1,7 @@
 package com.hedvig.embarkx.util
 
 class Stack<T> {
-    private val inner = mutableListOf<T>()
+    private val inner = ArrayDeque<T>()
 
     fun pop(): T {
         val ret = peek()
@@ -20,5 +20,3 @@ class Stack<T> {
         return inner.last()
     }
 }
-
-class EmptyStackException : Exception()
