@@ -21,7 +21,7 @@ apollo-gradlePlugin = { module = "com.apollographql.apollo3:apollo-gradle-plugin
 kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 
 # Libraries sorted alphabetically
-apollo-runtime = { module = "com.apollographql.apollo:apollo-runtime", version.ref = "apollo" }
+apollo-runtime = { module = "com.apollographql.apollo3:apollo-runtime", version.ref = "apollo" }
 
 arrowKt-core = { module = "io.arrow-kt:arrow-core", version.ref = "arrowKt" }
 
