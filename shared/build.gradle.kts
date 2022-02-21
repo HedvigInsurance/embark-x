@@ -32,6 +32,7 @@ kotlin {
 
                 implementation(kotlin("test-common"))
                 implementation(kotlin("test-annotations-common"))
+                implementation("io.kotest:kotest-assertions-core:5.1.0")
             }
         }
 
