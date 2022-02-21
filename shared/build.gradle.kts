@@ -16,9 +16,20 @@ kotlin {
     val xcf = XCFramework()
 
     sourceSets {
-        val commonMain by getting
+        val commonMain by getting {
+            dependencies {
+                implementation(libs.apollo.runtime)
+                implementation(libs.arrowKt.core)
+                implementation(libs.coroutines.core)
+                implementation(libs.koin.core)
+                implementation(libs.kotlin.stdlib)
+            }
+        }
         val commonTest by getting {
             dependencies {
+                implementation(libs.coroutines.test)
+                implementation(libs.koin.test)
+
                 implementation(kotlin("test-common"))
                 implementation(kotlin("test-annotations-common"))
             }
