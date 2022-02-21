@@ -1,0 +1,36 @@
+[versions]
+# androidSdkVersions
+compileSdkVersion = "31"
+targetSdkVersion = "30"
+minSdkVersion = "23"
+
+# gradlePlugin versions
+androidGradlePlugin = "7.0.4"
+apollo = "3.1.0"
+kotlin = "1.6.10"
+
+# Other versions sorted alphabetically
+arrowKt = "1.0.1"
+coroutines = "1.6.0"
+koin = "3.1.5"
+
+[libraries]
+# Gradle plugins
+android-gradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "androidGradlePlugin" }
+apollo-gradlePlugin = { module = "com.apollographql.apollo3:apollo-gradle-plugin", version.ref = "apollo" }
+kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+
+# Libraries sorted alphabetically
+apollo-runtime = { module = "com.apollographql.apollo3:apollo-runtime", version.ref = "apollo" }
+
+arrowKt-core = { module = "io.arrow-kt:arrow-core", version.ref = "arrowKt" }
+
+coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
+
+koin-core = { module = "io.insert-koin:koin", version.ref = "koin" }
+koin-test = { module = "io.insert-koin:koin-test", version.ref = "koin" }
+
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk7", version.ref = "kotlin" }
+
+[bundles]
