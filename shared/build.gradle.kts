@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
 
 plugins {
@@ -7,18 +8,12 @@ plugins {
 
 kotlin {
     android()
-    
+
+    val iosX64 = iosX64()
+    val iosArm64 = iosArm64()
+    val iosSimulatorArm64 = iosSimulatorArm64()
+
     val xcf = XCFramework()
-    listOf(
-        iosX64(),
-        iosArm64(),
-        //iosSimulatorArm64() sure all ios dependencies support this target
-    ).forEach {
-        it.binaries.framework {
-            baseName = "shared"
-            xcf.add(this)
-        }
-    }
 
     sourceSets {
         val commonMain by getting
@@ -28,39 +23,49 @@ kotlin {
                 implementation(kotlin("test-annotations-common"))
             }
         }
-        val androidMain by getting
+
+        @Suppress("UNUSED_VARIABLE")
+        val androidMain by getting {
+            dependsOn(commonMain)
+        }
+
+        @Suppress("UNUSED_VARIABLE")
         val androidTest by getting {
+            dependsOn(commonTest)
             dependencies {
                 implementation(kotlin("test-junit"))
-                implementation("junit:junit:4.13.2")
             }
         }
-        val iosX64Main by getting
-        val iosArm64Main by getting
-        //val iosSimulatorArm64Main by getting
+
         val iosMain by creating {
             dependsOn(commonMain)
-            iosX64Main.dependsOn(this)
-            iosArm64Main.dependsOn(this)
-            //iosSimulatorArm64Main.dependsOn(this)
         }
-        val iosX64Test by getting
-        val iosArm64Test by getting
-        //val iosSimulatorArm64Test by getting
         val iosTest by creating {
             dependsOn(commonTest)
-            iosX64Test.dependsOn(this)
-            iosArm64Test.dependsOn(this)
-            //iosSimulatorArm64Test.dependsOn(this)
+        }
+
+        listOf(
+            iosX64, iosArm64, iosSimulatorArm64
+        ).forEach { target: KotlinNativeTarget ->
+            target.binaries.framework {
+                baseName = "shared"
+                xcf.add(this)
+            }
+            getByName("${target.targetName}Main") {
+                dependsOn(iosMain)
+            }
+            getByName("${target.targetName}Test") {
+                dependsOn(iosTest)
+            }
         }
     }
 }
 
 android {
-    compileSdk = 31
+    compileSdk = libs.versions.compileSdkVersion.get().toInt()
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
-        minSdk = 23
-        targetSdk = 31
+        minSdk = libs.versions.minSdkVersion.get().toInt()
+        targetSdk = libs.versions.targetSdkVersion.get().toInt()
     }
 }
