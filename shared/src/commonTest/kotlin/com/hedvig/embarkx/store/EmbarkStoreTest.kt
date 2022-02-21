@@ -28,4 +28,15 @@ class EmbarkStoreTest {
 
         store.get("foo") shouldBe null
     }
+
+    @Test
+    fun `should be able to get value from prefill even if value has been rolled back`() {
+        val store = EmbarkStore()
+
+        store.put("foo", "bar")
+        store.commit()
+        store.rollback()
+
+        store.getPrefill("foo") shouldBe "bar"
+    }
 }
