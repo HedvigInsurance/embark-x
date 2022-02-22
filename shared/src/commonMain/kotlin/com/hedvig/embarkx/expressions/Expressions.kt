@@ -43,6 +43,6 @@ private fun evaluateMultipleExpression(
     val evaluatedSubExpressions = expression.subExpressions.map { evaluateExpression(it, store) }
     return when (expression) {
         is Expression.Multiple.And -> evaluatedSubExpressions.all { it }
-        is Expression.Multiple.Or -> TODO()
+        is Expression.Multiple.Or -> evaluatedSubExpressions.any { it }
     }
 }

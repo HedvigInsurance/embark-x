@@ -43,4 +43,30 @@ class MultipleExpressionTest {
             EmbarkStore(),
         ) shouldBe false
     }
+
+    @Test
+    fun `should return true for or-expression when one of the sub-expressions are true`() {
+        evaluateExpression(
+            Expression.Multiple.Or(
+                subExpressions = listOf(
+                    Expression.Unary.Always,
+                    Expression.Unary.Never,
+                )
+            ),
+            EmbarkStore(),
+        ) shouldBe true
+    }
+
+    @Test
+    fun `should return false for or-expression when all of the sub-expressions are false`() {
+        evaluateExpression(
+            Expression.Multiple.Or(
+                subExpressions = listOf(
+                    Expression.Unary.Never,
+                    Expression.Unary.Never,
+                )
+            ),
+            EmbarkStore(),
+        ) shouldBe false
+    }
 }
