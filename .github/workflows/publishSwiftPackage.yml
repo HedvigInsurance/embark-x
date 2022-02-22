@@ -1,0 +1,33 @@
+name: Publish Swift Package
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - run: ./gradlew createSwiftPackage
+      - name: Release
+        id: release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: shared/swiftpackage/EmbarkX-*.zip
+      - name: Replace url in Pacakge.swift
+        uses: jacobtomlinson/gha-find-replace@v2
+        with:
+          find: "url: ".*", \/\/ \$XC_FRAMEWORK_URL"
+          replace: "url: ${{ fromJSON(steps.release.outputs.assets)[0].browser_download_url }} // $XC_FRAMEWORK_URL"
+          regex: true
+      - name: Get checksum of XCFramework ZIP
+        id: checksum
+        run: echo '::set-output name=XC_FRAMEWORK_CHECKSUM::$(md5sum shared/swiftpackage/EmbarkX-*.zip)'
+      - name: Replace checksum in Package.swift
+        uses: jacobtomlinson/gha-find-replace@v2
+        with:
+          find: "checksum: ".*", \/\/ \$XC_FRAMEWORK_CHECKSUM"
+          replace: "checksum: ${{ steps.checksum.outputs.XC_FRAMEWORK_CHECKSUM }} // $XC_FRAMEWORK_URL"
+          regex: true
