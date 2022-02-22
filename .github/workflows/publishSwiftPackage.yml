@@ -34,7 +34,7 @@ jobs:
       - name: Get checksum of XCFramework ZIP
         id: checksum
         run: |
-          echo '::set-output name=replaceChecksum::"checksum: $(md5 shared/swiftpackage/EmbarkX-*.zip)" \/\/ XC_FRAMEWORK_CHECKSUM'
+          echo "::set-output name=replaceChecksum::'checksum: $(md5 -q shared/swiftpackage/EmbarkX-*.zip)' \/\/ XC_FRAMEWORK_CHECKSUM"
       - name: Replace checksum in Package.swift
         run: |
           find . -type f -name 'Package.swift' -exec sed -i '' 's/checksum: \".*\", \/\/ XC_FRAMEWORK_CHECKSUM/${{ steps.checksum.outputs.replaceChecksum }}/g' {} +
