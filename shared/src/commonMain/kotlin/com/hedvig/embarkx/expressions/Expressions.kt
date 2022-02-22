@@ -21,10 +21,20 @@ private fun evaluateBinaryExpression(expression: Expression.Binary, store: Embar
 
     return when (expression) {
         is Expression.Binary.Equals -> valueFromStore == expression.value
-        is Expression.Binary.GreaterThan -> TODO()
-        is Expression.Binary.GreaterThanOrEquals -> TODO()
-        is Expression.Binary.LessThan -> TODO()
-        is Expression.Binary.LessThanOrEquals -> TODO()
+        is Expression.Binary.GreaterThan,
+        is Expression.Binary.GreaterThanOrEquals,
+        is Expression.Binary.LessThan,
+        is Expression.Binary.LessThanOrEquals -> {
+            val valueFromStoreAsInt = valueFromStore?.toIntOrNull() ?: return false
+            val valueAsInt = expression.value.toIntOrNull() ?: return false
+            return when (expression) {
+                is Expression.Binary.GreaterThan -> valueFromStoreAsInt > valueAsInt
+                is Expression.Binary.GreaterThanOrEquals -> TODO()
+                is Expression.Binary.LessThan -> TODO()
+                is Expression.Binary.LessThanOrEquals -> TODO()
+                else -> false
+            }
+        }
         is Expression.Binary.NotEquals -> valueFromStore != expression.value
     }
 }
