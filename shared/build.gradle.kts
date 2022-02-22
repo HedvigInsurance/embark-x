@@ -4,6 +4,7 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
+    id("com.chromaticnoise.multiplatform-swiftpackage") version "2.0.3"
 }
 
 kotlin {
@@ -54,6 +55,14 @@ kotlin {
         }
         val iosTest by creating {
             dependsOn(commonTest)
+        }
+
+        multiplatformSwiftPackage {
+            packageName("EmbarkX")
+            swiftToolsVersion("5.5")
+            targetPlatforms {
+                iOS { v("13") }
+            }
         }
 
         listOf(
