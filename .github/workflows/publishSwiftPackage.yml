@@ -19,7 +19,7 @@ jobs:
       - name: Replace url in Pacakge.swift
         uses: jacobtomlinson/gha-find-replace@v2
         with:
-          find: "url: \".*\", \/\/ \$XC_FRAMEWORK_URL"
+          find: "url: \".*\", \/\/ XC_FRAMEWORK_URL"
           replace: "url: ${{ fromJSON(steps.release.outputs.assets)[0].browser_download_url }} // $XC_FRAMEWORK_URL"
           regex: true
       - name: Get checksum of XCFramework ZIP
@@ -28,7 +28,7 @@ jobs:
       - name: Replace checksum in Package.swift
         uses: jacobtomlinson/gha-find-replace@v2
         with:
-          find: "checksum: \".*\", \/\/ \$XC_FRAMEWORK_CHECKSUM"
+          find: "checksum: \".*\", \/\/ XC_FRAMEWORK_CHECKSUM"
           replace: "checksum: ${{ steps.checksum.outputs.XC_FRAMEWORK_CHECKSUM }} // $XC_FRAMEWORK_URL"
           regex: true
       - uses: EndBug/add-and-commit@v7
