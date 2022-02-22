@@ -36,7 +36,7 @@ class StackTest {
     }
 
     @Test
-    fun `when multiple items are pushed, they are returned in order when popping them`() {
+    fun `when multiple items are pushed they are returned in order when popping them`() {
         val stack = Stack<String>()
 
         stack.push("foo")
