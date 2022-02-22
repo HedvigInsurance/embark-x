@@ -6,6 +6,13 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
+      - name: Find next tag
+        uses: anothrNick/github-tag-action@1.36.0
+        id: findNextTag
+        env:
+          DRY_RUN: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
       - uses: actions/setup-java@v2
         with:
           distribution: 'temurin'
@@ -16,6 +23,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: shared/swiftpackage/EmbarkX-*.zip
+          tag_name: ${{ steps.findNextTag.outputs.newTag }}
       - name: Replace url in Package.swift
         uses: jacobtomlinson/gha-find-replace@v2
         with:
@@ -34,8 +42,3 @@ jobs:
       - uses: EndBug/add-and-commit@v7
         with:
           add: "Package.swift"
-      - name: Bump version and push tag
-        uses: anothrNick/github-tag-action@1.36.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          WITH_V: true
