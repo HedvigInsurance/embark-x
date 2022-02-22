@@ -1,3 +1,5 @@
+version = "0.0.1"
+
 buildscript {
     repositories {
         gradlePluginPortal()
@@ -11,6 +13,7 @@ buildscript {
         classpath(libs.android.gradlePlugin)
         classpath(libs.apollo.gradlePlugin)
         classpath(libs.kotlin.gradlePlugin)
+        classpath(libs.npmPublish.gradlePlugin)
     }
 }
 
@@ -21,6 +24,6 @@ allprojects {
     }
 }
 
-tasks.register("clean", Delete::class) {
-    delete(rootProject.buildDir)
+rootProject.plugins.withType<org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootPlugin> {
+    rootProject.the<org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension>().nodeVersion = "16.13.0"
 }

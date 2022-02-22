@@ -5,10 +5,17 @@ plugins {
     kotlin("multiplatform")
     id("com.android.library")
     id("com.chromaticnoise.multiplatform-swiftpackage") version "2.0.3"
+    id("dev.petuska.npm.publish")
 }
 
 kotlin {
     android()
+
+    js(IR) {
+        browser()
+        nodejs()
+        binaries.library()
+    }
 
     val iosX64 = iosX64()
     val iosArm64 = iosArm64()
@@ -17,6 +24,10 @@ kotlin {
     val xcf = XCFramework()
 
     sourceSets {
+        all {
+            languageSettings.optIn("kotlin.js.ExperimentalJsExport")
+        }
+
         val commonMain by getting {
             dependencies {
                 implementation(libs.apollo.runtime)
@@ -48,6 +59,16 @@ kotlin {
             dependencies {
                 implementation(kotlin("test-junit"))
             }
+        }
+
+        @Suppress("UNUSED_VARIABLE")
+        val jsMain by getting {
+            dependsOn(commonMain)
+        }
+
+        @Suppress("UNUSED_VARIABLE")
+        val jsTest by getting {
+            dependsOn(commonTest)
         }
 
         val iosMain by creating {
@@ -88,5 +109,15 @@ android {
     defaultConfig {
         minSdk = libs.versions.minSdkVersion.get().toInt()
         targetSdk = libs.versions.targetSdkVersion.get().toInt()
+    }
+}
+
+npmPublishing {
+    organization = "hedviginsurance"
+
+    publications {
+        named("js") {
+            version = rootProject.version.toString()
+        }
     }
 }

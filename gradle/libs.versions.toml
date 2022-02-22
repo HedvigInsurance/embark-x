@@ -13,12 +13,14 @@ kotlin = "1.6.10"
 arrowKt = "1.0.1"
 coroutines = "1.6.0"
 koin = "3.1.5"
+npmPublish = "2.1.2"
 
 [libraries]
 # Gradle plugins
 android-gradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "androidGradlePlugin" }
 apollo-gradlePlugin = { module = "com.apollographql.apollo3:apollo-gradle-plugin", version.ref = "apollo" }
 kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+npmPublish-gradlePlugin = { module = "dev.petuska.npm.publish:dev.petuska.npm.publish.gradle.plugin", version.ref = "npmPublish" }
 
 # Libraries sorted alphabetically
 apollo-runtime = { module = "com.apollographql.apollo3:apollo-runtime", version.ref = "apollo" }
