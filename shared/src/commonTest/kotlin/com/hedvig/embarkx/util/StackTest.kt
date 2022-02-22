@@ -6,19 +6,19 @@ import kotlin.test.Test
 
 class StackTest {
     @Test
-    fun `should throw when popping an empty stack`() {
+    fun shouldThrowWhenPoppingAnEmptyStack() {
         val stack = Stack<Unit>()
         shouldThrow<EmptyStackException> { stack.pop() }
     }
 
     @Test
-    fun `should throw when peeking an empty stack`() {
+    fun shouldThrowWhenPeekingAnEmptyStack() {
         val stack = Stack<Unit>()
         shouldThrow<EmptyStackException> { stack.peek() }
     }
 
     @Test
-    fun `should return latest pushed value when peeking`() {
+    fun shouldReturnLatestPushedValueWhenPeeking() {
         val stack = Stack<String>()
 
         stack.push("foo")
@@ -27,7 +27,7 @@ class StackTest {
     }
 
     @Test
-    fun `should return latest pushed value when popping`() {
+    fun shouldReturnLatestPushedValueWhenPopping() {
         val stack = Stack<String>()
 
         stack.push("foo")
@@ -36,7 +36,7 @@ class StackTest {
     }
 
     @Test
-    fun `when multiple items are pushed, they are returned in order when popping them`() {
+    fun whenMultipleItemsArePushedTheyAreReturnedInOrderWhenPoppingThem() {
         val stack = Stack<String>()
 
         stack.push("foo")

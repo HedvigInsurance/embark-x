@@ -5,7 +5,7 @@ import kotlin.test.Test
 
 class EmbarkStoreTest {
     @Test
-    fun `should be able to put a key then get it`() {
+    fun shouldBeAbleToPutAKeyThenGetIt() {
         val store = EmbarkStore()
 
         store.put("foo", "bar")
@@ -13,13 +13,13 @@ class EmbarkStoreTest {
     }
 
     @Test
-    fun `should return null when getting a key that does not exist`() {
+    fun shouldReturnNullWhenGettingAKeyThatDoesNotExist() {
         val store = EmbarkStore()
         store.get("foo") shouldBe null
     }
 
     @Test
-    fun `should remove values when rolling back`() {
+    fun shouldRemoveValuesWhenRollingBack() {
         val store = EmbarkStore()
 
         store.put("foo", "bar")
@@ -30,7 +30,7 @@ class EmbarkStoreTest {
     }
 
     @Test
-    fun `should be able to get value from prefill even if value has been rolled back`() {
+    fun shouldBeAbleToGetValueFromPrefillEvenIfValueHasBeenRolledBack() {
         val store = EmbarkStore()
 
         store.put("foo", "bar")
