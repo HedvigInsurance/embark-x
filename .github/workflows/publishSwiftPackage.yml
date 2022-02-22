@@ -29,23 +29,15 @@ jobs:
         run: |
           echo '::set-output name=REPLACE_URL::"url: ${{ steps.release.outputs.assets[0].browser_download_url }} // XC_FRAMEWORK_URL"'
       - name: Replace url in Package.swift
-        uses: jacobtomlinson/gha-find-replace@v2
-        with:
-          find: |
-            url: ".*", \/\/ XC_FRAMEWORK_URL
-          replace: ${{ steps.xcframework.REPLACE_URL }}
-          regex: true
+        run: |
+          sed -i 's/url: ".*", \/\/ XC_FRAMEWORK_URL/${{ steps.xcframework.REPLACE_URL }}/g' Package.swift
       - name: Get checksum of XCFramework ZIP
         id: checksum
         run: |
           echo '::set-output name=REPLACE_CHECKSUM::"checksum: $(md5 shared/swiftpackage/EmbarkX-*.zip)" // XC_FRAMEWORK_CHECKSUM'
       - name: Replace checksum in Package.swift
-        uses: jacobtomlinson/gha-find-replace@v2
-        with:
-          find: |
-            checksum: ".*", \/\/ XC_FRAMEWORK_CHECKSUM
-          replace: ${{ steps.checksum.outputs.REPLACE_CHECKSUM }}
-          regex: true
+        run: |
+          sed -i 's/checksum: ".*", \/\/ XC_FRAMEWORK_CHECKSUM/${{ steps.xcframework.REPLACE_CHECKSUM }}/g' Package.swift
       - uses: EndBug/add-and-commit@v7
         with:
           add: "Package.swift"
