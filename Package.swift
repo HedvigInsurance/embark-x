@@ -15,8 +15,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "EmbarkX",
-            url: "",
-            checksum: ""
+            url: "https://github.com/HedvigInsurance/embark-x/releases/download/v0.0.11-swift-package.0/EmbarkX-unspecified.zip"
+            checksum: "$(md5 -q shared/swiftpackage/EmbarkX-*.zip)"
         ),
     ]
 )
