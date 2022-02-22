@@ -7,6 +7,7 @@ minSdkVersion = "23"
 # gradlePlugin versions
 androidGradlePlugin = "7.0.4"
 apollo = "3.1.0"
+kotest = "5.1.0"
 kotlin = "1.6.10"
 
 # Other versions sorted alphabetically
@@ -19,6 +20,7 @@ npmPublish = "2.1.2"
 # Gradle plugins
 android-gradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "androidGradlePlugin" }
 apollo-gradlePlugin = { module = "com.apollographql.apollo3:apollo-gradle-plugin", version.ref = "apollo" }
+kotest-gradlePlugin = { module = "io.kotest:kotest-framework-multiplatform-plugin-gradle", version.ref = "kotest" }
 kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 npmPublish-gradlePlugin = { module = "dev.petuska.npm.publish:dev.petuska.npm.publish.gradle.plugin", version.ref = "npmPublish" }
 
@@ -32,6 +34,8 @@ coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", ve
 
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
 koin-test = { module = "io.insert-koin:koin-test", version.ref = "koin" }
+
+kotest-assertions = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
 
 kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk7", version.ref = "kotlin" }
 

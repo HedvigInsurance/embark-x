@@ -5,6 +5,7 @@ plugins {
     kotlin("multiplatform")
     id("com.android.library")
     id("dev.petuska.npm.publish")
+    id("io.kotest.multiplatform")
 }
 
 kotlin {
@@ -40,10 +41,10 @@ kotlin {
             dependencies {
                 implementation(libs.coroutines.test)
                 implementation(libs.koin.test)
+                implementation(libs.kotest.assertions)
 
                 implementation(kotlin("test-common"))
                 implementation(kotlin("test-annotations-common"))
-                implementation("io.kotest:kotest-assertions-core:5.1.0")
             }
         }
 
