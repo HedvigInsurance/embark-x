@@ -5,10 +5,7 @@ import com.hedvig.embarkx.store.EmbarkStore
 fun evaluateExpression(expression: Expression, store: EmbarkStore) = when (expression) {
     is Expression.Unary -> evaluateUnaryExpression(expression)
     is Expression.Binary -> evaluateBinaryExpression(expression, store)
-    is Expression.Multiple.And -> TODO()
-    is Expression.Multiple.Or -> TODO()
-    Expression.Unary.Always -> TODO()
-    Expression.Unary.Never -> TODO()
+    is Expression.Multiple -> evaluateMultipleExpression(expression, store)
 }
 
 private fun evaluateUnaryExpression(expression: Expression.Unary) = when (expression) {
@@ -36,5 +33,16 @@ private fun evaluateBinaryExpression(expression: Expression.Binary, store: Embar
             }
         }
         is Expression.Binary.NotEquals -> valueFromStore != expression.value
+    }
+}
+
+private fun evaluateMultipleExpression(
+    expression: Expression.Multiple,
+    store: EmbarkStore
+): Boolean {
+    val evaluatedSubExpressions = expression.subExpressions.map { evaluateExpression(it, store) }
+    return when (expression) {
+        is Expression.Multiple.And -> evaluatedSubExpressions.all { it }
+        is Expression.Multiple.Or -> TODO()
     }
 }

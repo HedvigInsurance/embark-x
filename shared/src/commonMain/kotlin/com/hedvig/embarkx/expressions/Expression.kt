@@ -42,12 +42,14 @@ sealed class Expression {
     }
 
     sealed class Multiple : Expression() {
+        abstract val subExpressions: List<Expression>
+
         data class And(
-            val subExpressions: List<Expression>,
+            override val subExpressions: List<Expression>,
         ) : Multiple()
 
         data class Or(
-            val subExpressions: List<Expression>,
+            override val subExpressions: List<Expression>,
         ) : Multiple()
     }
 }
