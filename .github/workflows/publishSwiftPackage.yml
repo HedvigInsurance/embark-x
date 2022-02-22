@@ -31,3 +31,11 @@ jobs:
           find: "checksum: ".*", \/\/ \$XC_FRAMEWORK_CHECKSUM"
           replace: "checksum: ${{ steps.checksum.outputs.XC_FRAMEWORK_CHECKSUM }} // $XC_FRAMEWORK_URL"
           regex: true
+      - uses: EndBug/add-and-commit@v7
+        with:
+          add: "Package.swift"
+      - name: Bump version and push tag
+        uses: anothrNick/github-tag-action@1.36.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
