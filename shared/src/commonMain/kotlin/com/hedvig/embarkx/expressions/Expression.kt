@@ -7,34 +7,37 @@ sealed class Expression {
     }
 
     sealed class Binary : Expression() {
+        abstract val key: String
+        abstract val value: String
+
         data class Equals(
-            val key: String,
-            val value: String,
+            override val key: String,
+            override val value: String,
         ) : Binary()
 
         data class NotEquals(
-            val key: String,
-            val value: String,
+            override val key: String,
+            override val value: String,
         ) : Binary()
 
         data class GreaterThan(
-            val key: String,
-            val value: String,
+            override val key: String,
+            override val value: String,
         ) : Binary()
 
         data class GreaterThanOrEquals(
-            val key: String,
-            val value: String,
+            override val key: String,
+            override val value: String,
         ) : Binary()
 
         data class LessThan(
-            val key: String,
-            val value: String,
+            override val key: String,
+            override val value: String,
         ) : Binary()
 
         data class LessThanOrEquals(
-            val key: String,
-            val value: String,
+            override val key: String,
+            override val value: String,
         ) : Binary()
     }
 
