@@ -85,4 +85,22 @@ class BinaryExpressionTest {
 
         evaluateExpression(Expression.Binary.GreaterThanOrEquals("foo", "6"), store) shouldBe false
     }
+
+    @Test
+    fun `should return true for less than-expression when value is lesser`() {
+        val store = EmbarkStore()
+        store.put("foo", "5")
+        store.commit()
+
+        evaluateExpression(Expression.Binary.LessThan("foo", "6"), store) shouldBe true
+    }
+
+    @Test
+    fun `should return false for less than-expression when value is greater`() {
+        val store = EmbarkStore()
+        store.put("foo", "5")
+        store.commit()
+
+        evaluateExpression(Expression.Binary.LessThan("foo", "4"), store) shouldBe false
+    }
 }

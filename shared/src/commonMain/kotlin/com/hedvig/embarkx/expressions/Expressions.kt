@@ -30,7 +30,7 @@ private fun evaluateBinaryExpression(expression: Expression.Binary, store: Embar
             return when (expression) {
                 is Expression.Binary.GreaterThan -> valueFromStoreAsInt > valueAsInt
                 is Expression.Binary.GreaterThanOrEquals -> valueFromStoreAsInt >= valueAsInt
-                is Expression.Binary.LessThan -> TODO()
+                is Expression.Binary.LessThan -> valueFromStoreAsInt < valueAsInt
                 is Expression.Binary.LessThanOrEquals -> TODO()
                 else -> false
             }
