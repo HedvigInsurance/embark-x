@@ -27,7 +27,7 @@ jobs:
       - name: Set XCFramework Replace URL
         id: xcframework
         run: |
-          echo '::set-output name=replaceUrl::"url: ${{ fromJSON(steps.release.outputs.assets)[0].browser_download_url }}"'
+          echo '::set-output name=replaceUrl::url: "${{ fromJSON(steps.release.outputs.assets)[0].browser_download_url }}"'
       - name: Replace url in Package.swift
         run: |
           find . -type f -name 'Package.swift' -exec sed -i '' 's#url: \".*\",#${{ steps.xcframework.outputs.replaceUrl }}#g' {} +
