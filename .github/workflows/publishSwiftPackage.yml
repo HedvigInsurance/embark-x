@@ -1,0 +1,46 @@
+name: Publish Swift Package
+on: [push]
+jobs:
+  release-swift-package:
+    runs-on: macos-11
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Find next tag
+        uses: mathieudutour/github-tag-action@v6.0
+        id: findNextTag
+        with:
+          dry_run: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - run: ./gradlew createSwiftPackage
+      - name: Release
+        id: release
+        uses: softprops/action-gh-release@fe9a9bd3295828558c7a3c004f23f3bf77d155b2
+        with:
+          files: shared/swiftpackage/EmbarkX-*.zip
+          tag_name: ${{ steps.findNextTag.outputs.new_tag }}
+      - name: Set XCFramework Replace URL
+        id: xcframework
+        run: |
+          echo '::set-output name=replaceUrl::url: "${{ fromJSON(steps.release.outputs.assets)[0].browser_download_url }}"'
+      - name: Replace url in Package.swift
+        run: |
+          find . -type f -name 'Package.swift' -exec sed -i '' 's#url: \".*\"#${{ steps.xcframework.outputs.replaceUrl }}#g' {} +
+      - name: Get checksum of XCFramework ZIP
+        id: checksum
+        run: |
+          echo ::set-output name=checksum::$(md5 -q shared/swiftpackage/EmbarkX-*.zip)
+      - name: Replace checksum in Package.swift
+        run: |
+          find . -type f -name 'Package.swift' -exec sed -i '' 's#checksum: \".*\"#checksum: \"${{ steps.checksum.outputs.checksum }}\"#g' {} +
+      - uses: EndBug/add-and-commit@v7
+        with:
+          add: "Package.swift"
+      - name: Push tag
+        uses: mathieudutour/github-tag-action@v6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
