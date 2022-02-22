@@ -23,7 +23,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: shared/swiftpackage/EmbarkX-*.zip
-          tag_name: ${{ steps.findNextTag.outputs.newTag }}
+          tag_name: ${{ steps.findNextTag.outputs.new_tag }}
       - name: Replace url in Package.swift
         uses: jacobtomlinson/gha-find-replace@v2
         with:
