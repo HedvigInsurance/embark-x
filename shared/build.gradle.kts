@@ -4,10 +4,17 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
+    id("dev.petuska.npm.publish")
 }
 
 kotlin {
     android()
+
+    js(IR) {
+        browser()
+        nodejs()
+        binaries.library()
+    }
 
     val iosX64 = iosX64()
     val iosArm64 = iosArm64()
@@ -16,6 +23,10 @@ kotlin {
     val xcf = XCFramework()
 
     sourceSets {
+        all {
+            languageSettings.optIn("kotlin.js.ExperimentalJsExport")
+        }
+
         val commonMain by getting {
             dependencies {
                 implementation(libs.apollo.runtime)
@@ -49,6 +60,16 @@ kotlin {
             }
         }
 
+        @Suppress("UNUSED_VARIABLE")
+        val jsMain by getting {
+            dependsOn(commonMain)
+        }
+
+        @Suppress("UNUSED_VARIABLE")
+        val jsTest by getting {
+            dependsOn(commonTest)
+        }
+
         val iosMain by creating {
             dependsOn(commonMain)
         }
@@ -79,5 +100,15 @@ android {
     defaultConfig {
         minSdk = libs.versions.minSdkVersion.get().toInt()
         targetSdk = libs.versions.targetSdkVersion.get().toInt()
+    }
+}
+
+npmPublishing {
+    organization = "hedviginsurance"
+
+    publications {
+        named("js") {
+            version = rootProject.version.toString()
+        }
     }
 }
