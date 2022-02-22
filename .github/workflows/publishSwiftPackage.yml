@@ -16,7 +16,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: shared/swiftpackage/EmbarkX-*.zip
-      - name: Replace url in Pacakge.swift
+      - name: Replace url in Package.swift
         uses: jacobtomlinson/gha-find-replace@v2
         with:
           find: 'url: ".*", \/\/ XC_FRAMEWORK_URL'
