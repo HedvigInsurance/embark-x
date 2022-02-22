@@ -28,7 +28,7 @@ jobs:
         uses: jacobtomlinson/gha-find-replace@v2
         with:
           find: |
-            url: \".*\", \/\/ XC_FRAMEWORK_URL
+            url: ".*", \/\/ XC_FRAMEWORK_URL
           replace: "url: ${{ fromJSON(steps.release.outputs.assets)[0].browser_download_url }} // XC_FRAMEWORK_URL"
           regex: true
       - name: Get checksum of XCFramework ZIP
