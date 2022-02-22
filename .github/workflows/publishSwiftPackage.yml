@@ -30,14 +30,14 @@ jobs:
           echo '::set-output name=REPLACE_URL::"url: ${{ steps.release.outputs.assets[0].browser_download_url }} \/\/ XC_FRAMEWORK_URL"'
       - name: Replace url in Package.swift
         run: |
-          sed -i 's/url: ".*", \/\/ XC_FRAMEWORK_URL/${{ steps.xcframework.REPLACE_URL }}/g' Package.swift
+          find . -type f -name 'Package.swift' -exec sed -i '' s/url: ".*", \/\/ XC_FRAMEWORK_URL/${{ steps.xcframework.REPLACE_URL }}/g {} +
       - name: Get checksum of XCFramework ZIP
         id: checksum
         run: |
           echo '::set-output name=REPLACE_CHECKSUM::"checksum: $(md5 shared/swiftpackage/EmbarkX-*.zip)" \/\/ XC_FRAMEWORK_CHECKSUM'
       - name: Replace checksum in Package.swift
         run: |
-          sed -i 's/checksum: ".*", \/\/ XC_FRAMEWORK_CHECKSUM/${{ steps.xcframework.REPLACE_CHECKSUM }}/g' Package.swift
+          find . -type f -name 'Package.swift' -exec sed -i '' s/checksum: ".*", \/\/ XC_FRAMEWORK_CHECKSUM/${{ steps.xcframework.REPLACE_CHECKSUM }}/g {} +
       - uses: EndBug/add-and-commit@v7
         with:
           add: "Package.swift"
