@@ -7,12 +7,12 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v2
       - name: Find next tag
-        uses: anothrNick/github-tag-action@1.36.0
+        uses: mathieudutour/github-tag-action@v6.0
         id: findNextTag
-        env:
-          DRY_RUN: true
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          WITH_V: true
+        with:
+          dry_run: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          with_v: true
       - uses: actions/setup-java@v2
         with:
           distribution: 'temurin'
@@ -42,3 +42,8 @@ jobs:
       - uses: EndBug/add-and-commit@v7
         with:
           add: "Package.swift"
+      - name: Push tag
+        uses: mathieudutour/github-tag-action@v6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          with_v: true
