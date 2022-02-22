@@ -20,14 +20,14 @@ jobs:
       - run: ./gradlew createSwiftPackage
       - name: Release
         id: release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@fe9a9bd3295828558c7a3c004f23f3bf77d155b2
         with:
           files: shared/swiftpackage/EmbarkX-*.zip
           tag_name: ${{ steps.findNextTag.outputs.new_tag }}
       - name: Set XCFramework Replace URL
         id: xcframework
         run: |
-          echo '::set-output name=replaceUrl::"url: ${{ steps.release.outputs.assets[0].browser_download_url }} \/\/ XC_FRAMEWORK_URL"'
+          echo '::set-output name=replaceUrl::"url: ${{ fromJSON(steps.release.outputs.assets)[0].browser_download_url }} \/\/ XC_FRAMEWORK_URL"'
       - name: Replace url in Package.swift
         run: |
           find . -type f -name 'Package.swift' -exec sed -i '' 's/url: \".*\", \/\/ XC_FRAMEWORK_URL/${{ steps.xcframework.replaceUrl }}/g' {} +
