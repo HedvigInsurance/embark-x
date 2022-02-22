@@ -29,7 +29,7 @@ jobs:
           echo '::set-output name=replaceUrl::url: "${{ fromJSON(steps.release.outputs.assets)[0].browser_download_url }}"'
       - name: Replace url in Package.swift
         run: |
-          find . -type f -name 'Package.swift' -exec sed -i '' 's#url: \".*\",#${{ steps.xcframework.outputs.replaceUrl }}#g' {} +
+          find . -type f -name 'Package.swift' -exec sed -i '' 's#url: \".*\",#${{ steps.xcframework.outputs.replaceUrl }},#g' {} +
       - name: Get checksum of XCFramework ZIP
         id: checksum
         run: |
