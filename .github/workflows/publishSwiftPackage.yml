@@ -27,7 +27,7 @@ jobs:
       - name: Set XCFramework Replace URL
         id: xcframework
         run: |
-          echo '::set-output name=REPLACE_URL::"url: ${{ fromJSON(steps.release.outputs.assets)[0].browser_download_url }} // XC_FRAMEWORK_URL"'
+          echo '::set-output name=REPLACE_URL::"url: ${{ steps.release.outputs.assets[0].browser_download_url }} // XC_FRAMEWORK_URL"'
       - name: Replace url in Package.swift
         uses: jacobtomlinson/gha-find-replace@v2
         with:
