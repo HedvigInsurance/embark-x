@@ -11,7 +11,7 @@ class BinaryExpressionTest {
         store.put("foo", "bar")
         store.commit()
 
-        evaluateExpression(Expression.Binary.Equals("foo", "bar"), store) shouldBe true
+        evaluateExpression(Equals("foo", "bar"), store) shouldBe true
     }
 
     @Test
@@ -20,7 +20,7 @@ class BinaryExpressionTest {
         store.put("foo", "baz")
         store.commit()
 
-        evaluateExpression(Expression.Binary.Equals("foo", "bar"), store) shouldBe false
+        evaluateExpression(Equals("foo", "bar"), store) shouldBe false
     }
 
     @Test
@@ -29,7 +29,7 @@ class BinaryExpressionTest {
         store.put("foo", "baz")
         store.commit()
 
-        evaluateExpression(Expression.Binary.NotEquals("foo", "bar"), store) shouldBe true
+        evaluateExpression(NotEquals("foo", "bar"), store) shouldBe true
     }
 
     @Test
@@ -38,7 +38,7 @@ class BinaryExpressionTest {
         store.put("foo", "bar")
         store.commit()
 
-        evaluateExpression(Expression.Binary.NotEquals("foo", "bar"), store) shouldBe false
+        evaluateExpression(NotEquals("foo", "bar"), store) shouldBe false
     }
 
     @Test
@@ -47,7 +47,7 @@ class BinaryExpressionTest {
         store.put("foo", "5")
         store.commit()
 
-        evaluateExpression(Expression.Binary.GreaterThan("foo", "4"), store) shouldBe true
+        evaluateExpression(GreaterThan("foo", "4"), store) shouldBe true
     }
 
     @Test
@@ -56,7 +56,7 @@ class BinaryExpressionTest {
         store.put("foo", "5")
         store.commit()
 
-        evaluateExpression(Expression.Binary.GreaterThan("foo", "6"), store) shouldBe false
+        evaluateExpression(GreaterThan("foo", "6"), store) shouldBe false
     }
 
     @Test
@@ -65,7 +65,7 @@ class BinaryExpressionTest {
         store.put("foo", "5")
         store.commit()
 
-        evaluateExpression(Expression.Binary.GreaterThanOrEquals("foo", "4"), store) shouldBe true
+        evaluateExpression(GreaterThanOrEquals("foo", "4"), store) shouldBe true
     }
 
     @Test
@@ -74,7 +74,7 @@ class BinaryExpressionTest {
         store.put("foo", "5")
         store.commit()
 
-        evaluateExpression(Expression.Binary.GreaterThanOrEquals("foo", "5"), store) shouldBe true
+        evaluateExpression(GreaterThanOrEquals("foo", "5"), store) shouldBe true
     }
 
     @Test
@@ -83,7 +83,7 @@ class BinaryExpressionTest {
         store.put("foo", "5")
         store.commit()
 
-        evaluateExpression(Expression.Binary.GreaterThanOrEquals("foo", "6"), store) shouldBe false
+        evaluateExpression(GreaterThanOrEquals("foo", "6"), store) shouldBe false
     }
 
     @Test
@@ -92,7 +92,7 @@ class BinaryExpressionTest {
         store.put("foo", "5")
         store.commit()
 
-        evaluateExpression(Expression.Binary.LessThan("foo", "6"), store) shouldBe true
+        evaluateExpression(LessThan("foo", "6"), store) shouldBe true
     }
 
     @Test
@@ -101,7 +101,7 @@ class BinaryExpressionTest {
         store.put("foo", "5")
         store.commit()
 
-        evaluateExpression(Expression.Binary.LessThan("foo", "4"), store) shouldBe false
+        evaluateExpression(LessThan("foo", "4"), store) shouldBe false
     }
 
     @Test
@@ -110,7 +110,7 @@ class BinaryExpressionTest {
         store.put("foo", "5")
         store.commit()
 
-        evaluateExpression(Expression.Binary.LessThanOrEquals("foo", "6"), store) shouldBe true
+        evaluateExpression(LessThanOrEquals("foo", "6"), store) shouldBe true
     }
 
     @Test
@@ -119,7 +119,7 @@ class BinaryExpressionTest {
         store.put("foo", "5")
         store.commit()
 
-        evaluateExpression(Expression.Binary.LessThanOrEquals("foo", "5"), store) shouldBe true
+        evaluateExpression(LessThanOrEquals("foo", "5"), store) shouldBe true
     }
 
     @Test
@@ -128,7 +128,7 @@ class BinaryExpressionTest {
         store.put("foo", "5")
         store.commit()
 
-        evaluateExpression(Expression.Binary.LessThanOrEquals("foo", "4"), store) shouldBe false
+        evaluateExpression(LessThanOrEquals("foo", "4"), store) shouldBe false
     }
 
     @Test
@@ -137,7 +137,7 @@ class BinaryExpressionTest {
         store.put("foo", "bar")
         store.commit()
 
-        evaluateExpression(Expression.Binary.GreaterThan("foo", "4"), store) shouldBe false
+        evaluateExpression(GreaterThan("foo", "4"), store) shouldBe false
     }
 
     @Test
@@ -146,6 +146,6 @@ class BinaryExpressionTest {
         store.put("foo", "5")
         store.commit()
 
-        evaluateExpression(Expression.Binary.GreaterThan("foo", "bar"), store) shouldBe false
+        evaluateExpression(GreaterThan("foo", "bar"), store) shouldBe false
     }
 }

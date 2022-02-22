@@ -7,11 +7,11 @@ import kotlin.test.Test
 class UnaryExpressionTest {
     @Test
     fun shouldReturnTrueForAlwaysExpression() {
-        evaluateExpression(Expression.Unary.Always, EmbarkStore()) shouldBe true
+        evaluateExpression(Always, EmbarkStore()) shouldBe true
     }
 
     @Test
     fun shouldReturnFalseForNeverExpression() {
-        evaluateExpression(Expression.Unary.Never, EmbarkStore()) shouldBe false
+        evaluateExpression(Never, EmbarkStore()) shouldBe false
     }
 }

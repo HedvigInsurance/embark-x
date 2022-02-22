@@ -8,10 +8,10 @@ class MultipleExpressionTest {
     @Test
     fun shouldReturnTrueForAndExpressionWhenBothSubExpressionsAreTrue() {
         evaluateExpression(
-            Expression.Multiple.And(
+            And(
                 subExpressions = listOf(
-                    Expression.Unary.Always,
-                    Expression.Unary.Always,
+                    Always,
+                    Always,
                 )
             ),
             EmbarkStore(),
@@ -21,10 +21,10 @@ class MultipleExpressionTest {
     @Test
     fun shouldReturnFalseForAndExpressionWhenOneOfTheSubExpressionsAreFalse() {
         evaluateExpression(
-            Expression.Multiple.And(
+            And(
                 subExpressions = listOf(
-                    Expression.Unary.Always,
-                    Expression.Unary.Never,
+                    Always,
+                    Never,
                 )
             ),
             EmbarkStore(),
@@ -34,10 +34,10 @@ class MultipleExpressionTest {
     @Test
     fun shouldReturnFalseForAndExpressionWhenAllOfTheSubExpressionsAreFalse() {
         evaluateExpression(
-            Expression.Multiple.And(
+            And(
                 subExpressions = listOf(
-                    Expression.Unary.Never,
-                    Expression.Unary.Never,
+                    Never,
+                    Never,
                 )
             ),
             EmbarkStore(),
@@ -47,10 +47,10 @@ class MultipleExpressionTest {
     @Test
     fun shouldReturnTrueForOrExpressionWhenOneOfTheSubExpressionsAreTrue() {
         evaluateExpression(
-            Expression.Multiple.Or(
+            Or(
                 subExpressions = listOf(
-                    Expression.Unary.Always,
-                    Expression.Unary.Never,
+                    Always,
+                    Never,
                 )
             ),
             EmbarkStore(),
@@ -60,10 +60,10 @@ class MultipleExpressionTest {
     @Test
     fun shouldReturnFalseForOrExpressionWhenAllOfTheSubExpressionsAreFalse() {
         evaluateExpression(
-            Expression.Multiple.Or(
+            Or(
                 subExpressions = listOf(
-                    Expression.Unary.Never,
-                    Expression.Unary.Never,
+                    Never,
+                    Never,
                 )
             ),
             EmbarkStore(),
