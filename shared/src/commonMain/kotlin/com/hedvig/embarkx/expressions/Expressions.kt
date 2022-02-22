@@ -29,7 +29,7 @@ private fun evaluateBinaryExpression(expression: Expression.Binary, store: Embar
             val valueAsInt = expression.value.toIntOrNull() ?: return false
             return when (expression) {
                 is Expression.Binary.GreaterThan -> valueFromStoreAsInt > valueAsInt
-                is Expression.Binary.GreaterThanOrEquals -> TODO()
+                is Expression.Binary.GreaterThanOrEquals -> valueFromStoreAsInt >= valueAsInt
                 is Expression.Binary.LessThan -> TODO()
                 is Expression.Binary.LessThanOrEquals -> TODO()
                 else -> false
