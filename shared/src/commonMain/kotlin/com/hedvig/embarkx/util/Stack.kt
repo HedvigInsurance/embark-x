@@ -14,9 +14,6 @@ class Stack<T> {
     }
 
     fun peek(): T {
-        if (inner.isEmpty()) {
-            throw EmptyStackException()
-        }
-        return inner.last()
+        return inner.lastOrNull() ?: throw EmptyStackException()
     }
 }
