@@ -31,7 +31,7 @@ private fun evaluateBinaryExpression(expression: Expression.Binary, store: Embar
                 is Expression.Binary.GreaterThan -> valueFromStoreAsInt > valueAsInt
                 is Expression.Binary.GreaterThanOrEquals -> valueFromStoreAsInt >= valueAsInt
                 is Expression.Binary.LessThan -> valueFromStoreAsInt < valueAsInt
-                is Expression.Binary.LessThanOrEquals -> TODO()
+                is Expression.Binary.LessThanOrEquals -> valueFromStoreAsInt <= valueAsInt
                 else -> false
             }
         }
