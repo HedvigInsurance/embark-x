@@ -15,7 +15,7 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "EmbarkX",
-            url: "", // XC_FRAMEWORK_URL
+            
             checksum: "" // XC_FRAMEWORK_CHECKSUM
         ),
     ]
