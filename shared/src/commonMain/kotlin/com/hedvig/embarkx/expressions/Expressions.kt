@@ -25,6 +25,6 @@ private fun evaluateBinaryExpression(expression: Expression.Binary, store: Embar
         is Expression.Binary.GreaterThanOrEquals -> TODO()
         is Expression.Binary.LessThan -> TODO()
         is Expression.Binary.LessThanOrEquals -> TODO()
-        is Expression.Binary.NotEquals -> TODO()
+        is Expression.Binary.NotEquals -> valueFromStore != expression.value
     }
 }

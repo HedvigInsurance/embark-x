@@ -22,4 +22,22 @@ class BinaryExpressionTest {
 
         evaluateExpression(Expression.Binary.Equals("foo", "bar"), store) shouldBe false
     }
+
+    @Test
+    fun `should return true for not equals-expression when values are not equal`() {
+        val store = EmbarkStore()
+        store.put("foo", "baz")
+        store.commit()
+
+        evaluateExpression(Expression.Binary.NotEquals("foo", "bar"), store) shouldBe true
+    }
+
+    @Test
+    fun `should return false for not equals-expression when values are equal`() {
+        val store = EmbarkStore()
+        store.put("foo", "bar")
+        store.commit()
+
+        evaluateExpression(Expression.Binary.NotEquals("foo", "bar"), store) shouldBe false
+    }
 }
