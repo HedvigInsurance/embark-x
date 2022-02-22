@@ -1,5 +1,5 @@
 name: Publish Swift Package
-on: [push, pull_request]
+on: [push]
 jobs:
   release-swift-package:
     runs-on: macos-11
