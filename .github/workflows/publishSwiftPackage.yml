@@ -12,7 +12,6 @@ jobs:
         with:
           dry_run: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          with_v: true
       - uses: actions/setup-java@v2
         with:
           distribution: 'temurin'
@@ -45,4 +44,3 @@ jobs:
         uses: mathieudutour/github-tag-action@v6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          with_v: true
