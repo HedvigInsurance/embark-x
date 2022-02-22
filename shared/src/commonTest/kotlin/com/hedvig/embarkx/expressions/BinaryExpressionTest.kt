@@ -6,7 +6,7 @@ import kotlin.test.Test
 
 class BinaryExpressionTest {
     @Test
-    fun `should return true for equals-expression when values are equal`() {
+    fun shouldReturnTrueForEqualsExpressionWhenValuesAreEqual() {
         val store = EmbarkStore()
         store.put("foo", "bar")
         store.commit()
@@ -15,7 +15,7 @@ class BinaryExpressionTest {
     }
 
     @Test
-    fun `should return false for equals-expression when values are not equal`() {
+    fun shouldReturnFalseForEqualsExpressionWhenValuesAreNotEqual() {
         val store = EmbarkStore()
         store.put("foo", "baz")
         store.commit()
@@ -24,7 +24,7 @@ class BinaryExpressionTest {
     }
 
     @Test
-    fun `should return true for not equals-expression when values are not equal`() {
+    fun shouldReturnTrueForNotEqualsExpressionWhenValuesAreNotEqual() {
         val store = EmbarkStore()
         store.put("foo", "baz")
         store.commit()
@@ -33,7 +33,7 @@ class BinaryExpressionTest {
     }
 
     @Test
-    fun `should return false for not equals-expression when values are equal`() {
+    fun shouldReturnFalseForNotEqualsExpressionWhenValuesAreEqual() {
         val store = EmbarkStore()
         store.put("foo", "bar")
         store.commit()
@@ -42,7 +42,7 @@ class BinaryExpressionTest {
     }
 
     @Test
-    fun `should return true for greater than-expression when value is greater`() {
+    fun shouldReturnTrueForGreaterThanExpressionWhenValueIsGreater() {
         val store = EmbarkStore()
         store.put("foo", "5")
         store.commit()
@@ -51,7 +51,7 @@ class BinaryExpressionTest {
     }
 
     @Test
-    fun `should return false for greater than-expression when value is smaller`() {
+    fun shouldReturnFalseForGreaterThanExpressionWhenValueIsSmaller() {
         val store = EmbarkStore()
         store.put("foo", "5")
         store.commit()
@@ -60,7 +60,7 @@ class BinaryExpressionTest {
     }
 
     @Test
-    fun `should return true for greater than or equals-expression when value is greater`() {
+    fun shouldReturnTrueForGreaterThanOrEqualsExpressionWhenValueIsGreater() {
         val store = EmbarkStore()
         store.put("foo", "5")
         store.commit()
@@ -69,7 +69,7 @@ class BinaryExpressionTest {
     }
 
     @Test
-    fun `should return true for greater than or equals-expression when value is equal`() {
+    fun shouldReturnTrueForGreaterThanOrEqualsExpressionWhenValueIsEqual() {
         val store = EmbarkStore()
         store.put("foo", "5")
         store.commit()
@@ -78,7 +78,7 @@ class BinaryExpressionTest {
     }
 
     @Test
-    fun `should return false for greater than or equals-expression when value is lesser`() {
+    fun shouldReturnFalseForGreaterThanOrEqualsExpressionWhenValueIsLesser() {
         val store = EmbarkStore()
         store.put("foo", "5")
         store.commit()
@@ -87,7 +87,7 @@ class BinaryExpressionTest {
     }
 
     @Test
-    fun `should return true for less than-expression when value is lesser`() {
+    fun shouldReturnTrueForLessThanExpressionWhenValueIsLesser() {
         val store = EmbarkStore()
         store.put("foo", "5")
         store.commit()
@@ -96,7 +96,7 @@ class BinaryExpressionTest {
     }
 
     @Test
-    fun `should return false for less than-expression when value is greater`() {
+    fun shouldReturnFalseForLessThanExpressionWhenValueIsGreater() {
         val store = EmbarkStore()
         store.put("foo", "5")
         store.commit()
@@ -105,7 +105,7 @@ class BinaryExpressionTest {
     }
 
     @Test
-    fun `should return true for less than or equals-expression when value is lesser`() {
+    fun shouldReturnTrueForLessThanOrEqualsExpressionWhenValueIsLesser() {
         val store = EmbarkStore()
         store.put("foo", "5")
         store.commit()
@@ -114,7 +114,7 @@ class BinaryExpressionTest {
     }
 
     @Test
-    fun `should return true for less than or equals-expression when value is equal`() {
+    fun shouldReturnTrueForLessThanOrEqualsExpressionWhenValueIsEqual() {
         val store = EmbarkStore()
         store.put("foo", "5")
         store.commit()
@@ -123,7 +123,7 @@ class BinaryExpressionTest {
     }
 
     @Test
-    fun `should return false for less than or equals-expression when value is greater`() {
+    fun shouldReturnFalseForLessThanOrEqualsExpressionWhenValueIsGreater() {
         val store = EmbarkStore()
         store.put("foo", "5")
         store.commit()
@@ -132,7 +132,7 @@ class BinaryExpressionTest {
     }
 
     @Test
-    fun `should return false when value from store is not a number`() {
+    fun shouldReturnFalseWhenValueFromStoreIsNotANumber() {
         val store = EmbarkStore()
         store.put("foo", "bar")
         store.commit()
@@ -141,7 +141,7 @@ class BinaryExpressionTest {
     }
 
     @Test
-    fun `should return false when value is not a number`() {
+    fun shouldReturnFalseWhenValueIsNotANumber() {
         val store = EmbarkStore()
         store.put("foo", "5")
         store.commit()
