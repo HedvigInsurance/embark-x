@@ -103,7 +103,7 @@ android {
 }
 
 npmPublishing {
-    organization = "com.hedvig"
+    organization = "hedviginsurance"
 
     publications {
         named("js") {
