@@ -5,7 +5,8 @@ plugins {
     kotlin("multiplatform")
     id("com.android.library")
     id("com.chromaticnoise.multiplatform-swiftpackage") version "2.0.3"
-    id("dev.petuska.npm.publish")
+    id("dev.petuska.npm.publish") // Enables bundling our JS target code into an NPM package
+    id("com.apollographql.apollo3") // Enables GraphQL models codegen plus stuff like downloadApolloSchema gradle task
 }
 
 kotlin {
@@ -103,7 +104,7 @@ kotlin {
     }
 }
 
-android {
+android { // From plugin id: com.android.library
     compileSdk = libs.versions.compileSdkVersion.get().toInt()
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
@@ -112,12 +113,29 @@ android {
     }
 }
 
-npmPublishing {
+npmPublishing { // From plugin id: dev.petuska.npm.publish
     organization = "hedviginsurance"
 
     publications {
         named("js") {
             version = rootProject.version.toString()
         }
+    }
+}
+
+apollo { // From plugin id: com.apollographql.apollo3
+    service("giraffe") {
+        codegenModels.set(com.apollographql.apollo3.compiler.MODELS_OPERATION_BASED)
+
+        packageName.set("com.hedvig.giraffe")
+        srcDir(file("src/commonMain/graphql/com/hedvig/embarkx"))
+        schemaFile.set(file("src/commonMain/graphql/com/hedvig/embarkx/schema.graphqls"))
+
+        introspection {
+            endpointUrl.set("https://graphql.dev.hedvigit.com/graphql")
+            schemaFile.set(file("src/commonMain/graphql/com/hedvig/embarkx/schema.graphqls"))
+        }
+
+        alwaysGenerateTypesMatching.add("Locale")
     }
 }

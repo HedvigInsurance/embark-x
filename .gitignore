@@ -10,3 +10,6 @@
 .cxx
 local.properties
 shared/swiftpackage/*
+
+# Apollo related files
+**/*.graphqls
