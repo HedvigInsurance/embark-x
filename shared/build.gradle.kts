@@ -40,6 +40,7 @@ kotlin {
         }
         val commonTest by getting {
             dependencies {
+                implementation(libs.apollo.testingSupport)
                 implementation(libs.coroutines.test)
                 implementation(libs.koin.test)
 
@@ -136,6 +137,10 @@ apollo { // From plugin id: com.apollographql.apollo3
             endpointUrl.set("https://graphql.dev.hedvigit.com/graphql")
             schemaFile.set(file("src/commonMain/graphql/com/hedvig/embarkx/schema.graphqls"))
         }
+
+        // Test builders
+        generateKotlinModels.set(true)
+        generateTestBuilders.set(true)
 
         alwaysGenerateTypesMatching.add("Locale")
     }

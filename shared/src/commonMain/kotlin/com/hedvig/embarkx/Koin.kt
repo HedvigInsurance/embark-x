@@ -9,9 +9,11 @@ fun initializeDi(
     extraConfiguration: KoinApplication.() -> Unit = {},
 ): KoinApplication {
     return startKoin {
+        modules(
+            apolloModule,
+            embarkStoryModule,
+        )
         extraConfiguration()
-        modules(apolloModule)
-        modules(embarkStoryModule)
     }
 }
 

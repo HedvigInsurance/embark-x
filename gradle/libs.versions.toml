@@ -24,6 +24,7 @@ npmPublish-gradlePlugin = { module = "dev.petuska.npm.publish:dev.petuska.npm.pu
 
 # Libraries sorted alphabetically
 apollo-runtime = { module = "com.apollographql.apollo3:apollo-runtime", version.ref = "apollo" }
+apollo-testingSupport = { module = "com.apollographql.apollo3:apollo-testing-support", version.ref = "apollo" }
 
 arrowKt-core = { module = "io.arrow-kt:arrow-core", version.ref = "arrowKt" }
 
