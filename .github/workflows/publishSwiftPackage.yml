@@ -21,9 +21,9 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
       - run: ./gradlew assembleEmbarkXXCFramework
-      - name: Copy file
+      - name: ZIP Framework
         run: |
-          cp shared/build/XCFrameworks/release/EmbarkX.zip EmbarkX-${{ steps.findNextTag.outputs.new_tag }}.zip
+          zip -r shared/build/XCFrameworks/release/EmbarkX.xcframework EmbarkX-${{ steps.findNextTag.outputs.new_tag }}.zip
       - name: Release
         id: release
         uses: softprops/action-gh-release@fe9a9bd3295828558c7a3c004f23f3bf77d155b2
