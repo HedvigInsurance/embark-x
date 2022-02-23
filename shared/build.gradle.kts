@@ -5,6 +5,8 @@ plugins {
     kotlin("multiplatform")
     id("com.android.library")
     id("dev.petuska.npm.publish")
+
+    id("com.hedvig.embarkx")
 }
 
 kotlin {

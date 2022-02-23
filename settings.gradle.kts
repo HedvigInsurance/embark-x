@@ -9,5 +9,6 @@ pluginManagement {
 rootProject.name = "EmbarkX"
 
 include(":shared")
+include(":gradle-plugins")
 
 enableFeaturePreview("VERSION_CATALOGS")

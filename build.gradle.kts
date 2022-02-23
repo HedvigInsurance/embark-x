@@ -14,6 +14,8 @@ buildscript {
         classpath(libs.apollo.gradlePlugin)
         classpath(libs.kotlin.gradlePlugin)
         classpath(libs.npmPublish.gradlePlugin)
+
+        classpath("com.hedvig.embarkx:js-namespace:0.0.1")
     }
 }
 
