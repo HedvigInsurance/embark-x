@@ -4,7 +4,7 @@ import arrow.core.Either
 import arrow.core.leftIfNull
 import com.apollographql.apollo3.ApolloClient
 import com.hedvig.embarkx.apollo.ApolloError
-import com.hedvig.embarkx.apollo.toEither
+import com.hedvig.embarkx.apollo.executeSafely
 import com.hedvig.giraffe.EmbarkStoryQuery
 import com.hedvig.giraffe.type.Locale
 
@@ -17,9 +17,8 @@ class GetEmbarkStoryUseCase(
     ): Either<Error, EmbarkStory> {
         return apolloClient
             .query(EmbarkStoryQuery(storyName = embarkStoryName.name, locale = locale.rawValue))
-            .execute()
-            .toEither()
-            .mapLeft { apolloError -> Error.NetworkError(apolloError) }
+            .executeSafely()
+            .mapLeft { apolloError -> Error.Apollo(apolloError) }
             .map(EmbarkStoryQuery.Data::embarkStory)
             .leftIfNull { Error.NoStoryFound }
             .map(EmbarkStory::fromDto)
@@ -27,7 +26,7 @@ class GetEmbarkStoryUseCase(
 
     sealed interface Error {
         object NoStoryFound : Error
-        data class NetworkError(val apolloError: ApolloError) : Error
+        data class Apollo(val apolloError: ApolloError) : Error
     }
 }
 
