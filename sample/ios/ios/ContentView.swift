@@ -1,15 +1,9 @@
-//
-//  ContentView.swift
-//  ios
-//
-//  Created by Tarik Stafford on 2022-02-23.
-//
-
 import SwiftUI
+import shared
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
+        Text(shared.Greeting().greeting())
             .padding()
     }
 }
