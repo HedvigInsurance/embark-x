@@ -33,7 +33,7 @@ jobs:
       - name: Get checksum of XCFramework ZIP
         id: checksum
         run: |
-          echo ::set-output name=checksum::$(md5 -q shared/swiftpackage/EmbarkX-*.zip)
+          echo ::set-output name=checksum::$(swift package compute-checksum shared/swiftpackage/EmbarkX-*.zip)
       - name: Replace checksum in Package.swift
         run: |
           find . -type f -name 'Package.swift' -exec sed -i '' 's#checksum: \".*\"#checksum: \"${{ steps.checksum.outputs.checksum }}\"#g' {} +
@@ -44,4 +44,3 @@ jobs:
         uses: mathieudutour/github-tag-action@v6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          custom_tag: v0.1.0
