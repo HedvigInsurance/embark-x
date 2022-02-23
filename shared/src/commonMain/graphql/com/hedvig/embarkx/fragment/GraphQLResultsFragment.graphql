@@ -1,0 +1,4 @@
+fragment GraphQLResultsFragment on EmbarkAPIGraphQLResult {
+    key
+    as
+}

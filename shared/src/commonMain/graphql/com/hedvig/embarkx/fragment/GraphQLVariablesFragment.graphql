@@ -1,0 +1,32 @@
+fragment GraphQLVariablesFragment on EmbarkAPIGraphQLVariable {
+    ... on EmbarkAPIGraphQLSingleVariable {
+        key
+        from
+        as
+    }
+    ... on EmbarkAPIGraphQLGeneratedVariable {
+        key
+        storeAs
+        type
+    }
+    ... on EmbarkAPIGraphQLMultiActionVariable {
+        key
+        variables {
+            ... on EmbarkAPIGraphQLSingleVariable {
+                key
+                from
+                as
+            }
+            ... on EmbarkAPIGraphQLGeneratedVariable {
+                key
+                storeAs
+                type
+            }
+        }
+    }
+    ... on EmbarkAPIGraphQLConstantVariable {
+        key
+        value
+        as
+    }
+}

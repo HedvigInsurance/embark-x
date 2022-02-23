@@ -1,0 +1,6 @@
+fragment GraphQLErrorsFragment on EmbarkAPIGraphQLError {
+    contains
+    next {
+        ...EmbarkLinkFragment
+    }
+}
