@@ -72,4 +72,40 @@ class GetEmbarkStoryUseCaseTest : KoinTest {
         error should beOfType<GetEmbarkStoryUseCase.Error.NoStoryFound>()
         error shouldNot beOfType<GetEmbarkStoryUseCase.Error.Apollo>()
     }
+
+    @Test
+    fun successfulRequestReturnsTheContainingData() /* = runTest */ {
+        val storyName = "storyName"
+        val locale = Locale.en_SE
+        val firstPassage = "firstPassage"
+        val testQuery = EmbarkStoryQuery(storyName = storyName, locale = locale.rawValue)
+        val responseObject = EmbarkStoryQuery.Data() {
+            embarkStory = embarkStory {
+                startPassage = firstPassage
+                computedStoreValues = listOf(
+                    computedStoreValue {
+                        key = "key"
+                        `value` = "value"
+                    }
+                )
+                passages = listOf(
+                    passage {
+                        name = firstPassage
+                    }
+                )
+            }
+        }
+        apolloClient.enqueueTestResponse(
+            operation = testQuery,
+            data = responseObject,
+            errors = null
+        )
+//        Comment out the suspending function for now, to improve debuggability by not being inside a coroutine
+//        val result = getEmbarkStoryUseCase.invoke(EmbarkStoryName(storyName), locale)
+//        result should beOfType<Either.Right<*>>()
+//        val embarkStory = (result as Either.Right).value
+//        embarkStory.startPassage shouldBe firstPassage
+//        embarkStory.computedStoreValues shouldBe listOf(EmbarkStoryQuery.ComputedStoreValue("key", "value"))
+//    }
+    }
 }
