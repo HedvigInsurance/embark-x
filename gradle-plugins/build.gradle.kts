@@ -1,19 +1,22 @@
 plugins {
+    `kotlin-dsl`
     `java-gradle-plugin`
-//    `kotlin-dsl`
-    `kotlin-dsl-precompiled-script-plugins`
-//    kotlin("js") apply false
 }
 
 repositories {
     mavenCentral()
 }
 
+dependencies {
+    compileOnly(kotlin("gradle-plugin"))
+}
+
 gradlePlugin {
     plugins {
-        create("simplePlugin") {
-            id = "org.example.greeting"
-            implementationClass = "org.example.GreetingPlugin"
+        create("js-namespace") {
+            id = "com.hedvig.embarkx"
+            implementationClass = "com.hedvig.embarkx.gradle.plugin.KotlinToJsNamespaceClearingPlugin"
+            version = "0.0.1"
         }
     }
 }
