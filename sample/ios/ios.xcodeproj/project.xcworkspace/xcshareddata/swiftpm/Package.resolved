@@ -1,0 +1,115 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Apollo",
+        "repositoryURL": "https://github.com/apollographql/apollo-ios",
+        "state": {
+          "branch": null,
+          "revision": "84c8fc2448d6b7285481bfa25da12668083859eb",
+          "version": "0.49.1"
+        }
+      },
+      {
+        "package": "Disk",
+        "repositoryURL": "https://github.com/HedvigInsurance/Disk",
+        "state": {
+          "branch": null,
+          "revision": "222c2904e30b7c24bd4f39b2722f28ac768e9b3c",
+          "version": "0.6.5"
+        }
+      },
+      {
+        "package": "DynamicColor",
+        "repositoryURL": "https://github.com/yannickl/DynamicColor",
+        "state": {
+          "branch": null,
+          "revision": "d9beca13ca85baa50ee29832d0db5129fba69630",
+          "version": "5.0.1"
+        }
+      },
+      {
+        "package": "Flow",
+        "repositoryURL": "https://github.com/HedvigInsurance/Flow",
+        "state": {
+          "branch": null,
+          "revision": "2c782714430e42b9a16acbd46c83d2bde2e36968",
+          "version": "1.8.8"
+        }
+      },
+      {
+        "package": "Form",
+        "repositoryURL": "https://github.com/HedvigInsurance/Form",
+        "state": {
+          "branch": null,
+          "revision": "c153a5a692a7ec818ddf0c62b56b66750f2af387",
+          "version": "3.0.9"
+        }
+      },
+      {
+        "package": "Kingfisher",
+        "repositoryURL": "https://github.com/onevcat/Kingfisher",
+        "state": {
+          "branch": null,
+          "revision": "0c02c46cfdc0656ce74fd0963a75e5000a0b7f23",
+          "version": "7.1.2"
+        }
+      },
+      {
+        "package": "MarkdownKit",
+        "repositoryURL": "https://github.com/bmoliveira/MarkdownKit",
+        "state": {
+          "branch": null,
+          "revision": "5056f3305d3499f44d8815530d560b87082e0cf5",
+          "version": "1.7.1"
+        }
+      },
+      {
+        "package": "Presentation",
+        "repositoryURL": "https://github.com/HedvigInsurance/Presentation.git",
+        "state": {
+          "branch": null,
+          "revision": "b446f2e1c384f9952e5fc0f5653ed83b671276bd",
+          "version": "2.0.20"
+        }
+      },
+      {
+        "package": "Runtime",
+        "repositoryURL": "https://github.com/wickwirew/Runtime",
+        "state": {
+          "branch": null,
+          "revision": "a848b81e1a0100801f572e5273ffe4352fd54088",
+          "version": "2.2.2"
+        }
+      },
+      {
+        "package": "SnapKit",
+        "repositoryURL": "https://github.com/SnapKit/SnapKit",
+        "state": {
+          "branch": null,
+          "revision": "d458564516e5676af9c70b4f4b2a9178294f1bc6",
+          "version": "5.0.1"
+        }
+      },
+      {
+        "package": "SQLite.swift",
+        "repositoryURL": "https://github.com/stephencelis/SQLite.swift.git",
+        "state": {
+          "branch": null,
+          "revision": "0a9893ec030501a3956bee572d6b4fdd3ae158a1",
+          "version": "0.12.2"
+        }
+      },
+      {
+        "package": "Swifter",
+        "repositoryURL": "https://github.com/httpswift/Swifter",
+        "state": {
+          "branch": null,
+          "revision": "9483a5d459b45c3ffd059f7b55f9638e268632fd",
+          "version": "1.5.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

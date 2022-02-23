@@ -1,9 +1,9 @@
 import SwiftUI
-import shared
+import Form
 
 struct ContentView: View {
     var body: some View {
-        Text(shared.Greeting().greeting())
+        Text("shared.Greeting().greeting()")
             .padding()
     }
 }
