@@ -1,7 +1,9 @@
 package com.hedvig.embarkx.store
 
 import com.hedvig.embarkx.util.Stack
+import kotlin.js.JsExport
 
+@JsExport
 class EmbarkStore {
     private val versions = Stack<Map<String, String?>>().apply { push(emptyMap()) }
     private val stage = mutableMapOf<String, String?>()
