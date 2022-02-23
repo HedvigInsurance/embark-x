@@ -91,6 +91,11 @@ class GetEmbarkStoryUseCaseTest : KoinTest {
                 passages = listOf(
                     passage {
                         name = firstPassage
+                        externalRedirect = externalRedirect {
+                            data = data {
+                                location = "asdf"
+                            }
+                        }
                     }
                 )
             }
