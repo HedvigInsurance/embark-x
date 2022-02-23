@@ -1,5 +1,6 @@
 package com.hedvig.embarkx.store
 
+import com.hedvig.embarkx.computedvalues.evaluate
 import com.hedvig.embarkx.util.Stack
 import kotlin.js.JsExport
 
@@ -9,8 +10,14 @@ class EmbarkStore {
     private val stage = mutableMapOf<String, String?>()
     private val prefill = mutableMapOf<String, String?>()
 
+    var computedValues: Map<String, String> = emptyMap()
+
     fun get(key: String): String? {
-        return versions.peek()[key] ?: stage[key]
+        return computedValues[key]?.let { computedValue ->
+            evaluate(computedValue, this)
+        }
+            ?: versions.peek()[key]
+            ?: stage[key]
     }
 
     fun put(key: String, value: String?) {
