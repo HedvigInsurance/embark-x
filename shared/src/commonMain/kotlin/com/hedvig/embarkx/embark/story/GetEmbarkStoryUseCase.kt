@@ -19,7 +19,7 @@ class GetEmbarkStoryUseCase(
             .query(EmbarkStoryQuery(storyName = embarkStoryName.name, locale = locale.rawValue))
             .execute()
             .toEither()
-            .mapLeft { Error.NetworkError(it) }
+            .mapLeft { apolloError -> Error.NetworkError(apolloError) }
             .map(EmbarkStoryQuery.Data::embarkStory)
             .leftIfNull { Error.NoStoryFound }
             .map(EmbarkStory::fromDto)
