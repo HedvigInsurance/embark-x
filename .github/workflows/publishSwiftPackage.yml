@@ -24,7 +24,7 @@ jobs:
       - name: ZIP and Copy Framework
         run: |
           cd shared/build/XCFrameworks/release/;
-          zip -r EmbarkX.xcframework EmbarkX-${{ steps.findNextTag.outputs.new_tag }}.zip;
+          zip -r EmbarkX-${{ steps.findNextTag.outputs.new_tag }}.zip EmbarkX.xcframework;
           cp EmbarkX-${{ steps.findNextTag.outputs.new_tag }}.zip $GITHUB_WORKSPACE/EmbarkX-${{ steps.findNextTag.outputs.new_tag }}.zip;
           cd $GITHUB_WORKSPACE
       - name: Release
