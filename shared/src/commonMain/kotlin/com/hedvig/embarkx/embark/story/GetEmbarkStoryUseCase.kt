@@ -31,12 +31,12 @@ class GetEmbarkStoryUseCase(
 }
 
 data class EmbarkStory(
-    val passages: List<EmbarkStoryQuery.Data.EmbarkStory.Passage>,
+    val passages: List<EmbarkStoryQuery.Passage>,
     val startPassage: String,
-    val computedStoreValues: List<EmbarkStoryQuery.Data.EmbarkStory.ComputedStoreValue>?,
+    val computedStoreValues: List<EmbarkStoryQuery.ComputedStoreValue>?,
 ) {
     companion object {
-        fun fromDto(dto: EmbarkStoryQuery.Data.EmbarkStory): EmbarkStory {
+        fun fromDto(dto: EmbarkStoryQuery.EmbarkStory): EmbarkStory {
             return EmbarkStory(
                 dto.passages,
                 dto.startPassage,

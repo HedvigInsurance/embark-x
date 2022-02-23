@@ -126,8 +126,8 @@ npmPublishing { // From plugin id: dev.petuska.npm.publish
 
 apollo { // From plugin id: com.apollographql.apollo3
     service("giraffe") {
-//        codegenModels.set(com.apollographql.apollo3.compiler.MODELS_OPERATION_BASED)
         codegenModels.set(com.apollographql.apollo3.compiler.MODELS_RESPONSE_BASED)
+        flattenModels.set(true)
 
         packageName.set("com.hedvig.giraffe")
         srcDir(file("src/commonMain/graphql/com/hedvig/embarkx"))
