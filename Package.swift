@@ -15,8 +15,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "EmbarkX",
-            url: "https://github.com/HedvigInsurance/embark-x/releases/download/v0.2.0/EmbarkX-unspecified.zip",
-            checksum: "997230960d9fbc39b6c579b9a135c544edf6de9ebc93825cfaa49cc0fda83713"
+            url: "https://github.com/HedvigInsurance/embark-x/releases/download/v0.2.2/EmbarkX-v0.2.2.zip",
+            checksum: "9c5a77500de9e5615f8781ade19e46441f02bc195779d19b724e112de8d52dfa"
         ),
     ]
 )
