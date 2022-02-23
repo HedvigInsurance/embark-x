@@ -61,7 +61,7 @@ class GetEmbarkStoryUseCaseTest : KoinTest {
         apolloClient.enqueueTestResponse(
             operation = testQuery,
             data = EmbarkStoryQuery.Data {
-                this.embarkStory = null
+                embarkStory = null
             },
             errors = null
         )
