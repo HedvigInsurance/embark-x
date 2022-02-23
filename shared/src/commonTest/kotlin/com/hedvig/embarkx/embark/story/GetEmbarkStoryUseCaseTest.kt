@@ -1,5 +1,6 @@
 package com.hedvig.embarkx.embark.story
 
+import arrow.core.Either
 import com.apollographql.apollo3.ApolloClient
 import com.apollographql.apollo3.annotations.ApolloExperimental
 import com.apollographql.apollo3.testing.enqueueTestNetworkError
@@ -10,7 +11,9 @@ import com.hedvig.embarkx.testutils.apolloModuleTest
 import com.hedvig.giraffe.EmbarkStoryQuery
 import com.hedvig.giraffe.test.EmbarkStoryQuery_TestBuilder.Data
 import com.hedvig.giraffe.type.Locale
-import io.kotest.matchers.shouldNotBe
+import io.kotest.matchers.should
+import io.kotest.matchers.shouldNot
+import io.kotest.matchers.types.beOfType
 import kotlin.test.AfterTest
 import kotlin.test.BeforeTest
 import kotlin.test.Test
@@ -24,7 +27,7 @@ import org.koin.test.inject
 class GetEmbarkStoryUseCaseTest : KoinTest {
 
     private val apolloClient: ApolloClient by inject()
-    val getEmbarkStoryUseCase: GetEmbarkStoryUseCase by inject()
+    private val getEmbarkStoryUseCase: GetEmbarkStoryUseCase by inject()
 
     @BeforeTest // todo look into making this a @rule somehow to avoid boilerplate? Maybe that's possible
     fun setUp() {
@@ -41,23 +44,32 @@ class GetEmbarkStoryUseCaseTest : KoinTest {
 
     @Test
     fun apolloErrorReturnsWhenResponseFails() = runTest {
-        val storyName = "storyName"
-        val locale = Locale.en_SE
-        val testQuery = EmbarkStoryQuery(storyName = storyName, locale = locale.rawValue)
         apolloClient.enqueueTestNetworkError()
 
-        val actual = getEmbarkStoryUseCase.invoke(EmbarkStoryName(storyName), locale)
-        actual shouldNotBe null
+        val result = getEmbarkStoryUseCase.invoke(EmbarkStoryName("storyName"), Locale.en_SE)
+        result should beOfType<Either.Left<*>>()
+        val error = (result as Either.Left).value
+        error should beOfType<GetEmbarkStoryUseCase.Error.Apollo>()
+        error shouldNot beOfType<GetEmbarkStoryUseCase.Error.NoStoryFound>()
     }
 
     @Test
-    fun apolloErrorReturnsWhenThereIsNoData() = runTest {
+    fun noDataErrorReturnsWhenThereIsNoData() = runTest {
         val storyName = "storyName"
         val locale = Locale.en_SE
         val testQuery = EmbarkStoryQuery(storyName = storyName, locale = locale.rawValue)
-        apolloClient.enqueueTestResponse(operation = testQuery, data = TODO())
+        apolloClient.enqueueTestResponse(
+            operation = testQuery,
+            data = EmbarkStoryQuery.Data {
+                this.embarkStory = null
+            },
+            errors = null
+        )
 
-        val actual = getEmbarkStoryUseCase.invoke(EmbarkStoryName(storyName), locale)
-        actual shouldNotBe null
+        val result = getEmbarkStoryUseCase.invoke(EmbarkStoryName(storyName), locale)
+        result should beOfType<Either.Left<*>>()
+        val error = (result as Either.Left).value
+        error should beOfType<GetEmbarkStoryUseCase.Error.NoStoryFound>()
+        error shouldNot beOfType<GetEmbarkStoryUseCase.Error.Apollo>()
     }
 }
