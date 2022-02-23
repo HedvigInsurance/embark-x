@@ -31,4 +31,4 @@ private fun String.stripTrailingZeroes() = if (contains(TRAILING_ZEROES)) {
     this
 }
 
-private val TRAILING_ZEROES = Regex("\\.0+$")
+private val TRAILING_ZEROES = Regex(""".0+$""")

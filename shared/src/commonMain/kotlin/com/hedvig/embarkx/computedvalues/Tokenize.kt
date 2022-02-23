@@ -1,11 +1,11 @@
 package com.hedvig.embarkx.computedvalues
 
-private val LEADING_WHITESPACE = Regex("^\\s+")
-private val NUMERIC_CONSTANT = Regex("^\\d+(\\.\\d+)?")
-private val DOUBLE_QUOTES_STRING_CONSTANT = Regex("^\"([^\"]*)\"")
-private val SINGLE_QUOTES_STRING_CONSTANT = Regex("^'([^']*)'")
-private val VARIABLE = Regex("^([a-zA-Z][\\w\\d]*)")
-private val BINARY_OPERATOR = Regex("^(-|\\+\\+|\\+)")
+private val LEADING_WHITESPACE = Regex("""^\s+""")
+private val NUMERIC_CONSTANT = Regex("""^\d+(\.\d+)?""")
+private val DOUBLE_QUOTES_STRING_CONSTANT = Regex("""^"([^"]*)"""")
+private val SINGLE_QUOTES_STRING_CONSTANT = Regex("""^'([^']*)'""")
+private val VARIABLE = Regex("""^([a-zA-Z][\w\d]*)""")
+private val BINARY_OPERATOR = Regex("""^(-|\+\+|\+)""")
 
 private val matchers = listOf<(String) -> Token?>(
     { s ->
