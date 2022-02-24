@@ -1406,6 +1406,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 36A1B20927C66973002B00CE /* Build configuration list for PBXNativeTarget "ios" */;
 			buildPhases = (
+				3682C36627C788530080D7F7 /* ShellScript */,
 				36A1B1F727C66972002B00CE /* Sources */,
 				36A1B1F827C66972002B00CE /* Frameworks */,
 				36A1B1F927C66972002B00CE /* Resources */,
@@ -1492,6 +1493,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3682C36627C788530080D7F7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncd \"$SRCROOT/../..\"\n./gradlew :shared:embedAndSignAppleFrameworkForXcode\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		36A1B1F727C66972002B00CE /* Sources */ = {
