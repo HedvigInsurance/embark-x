@@ -145,3 +145,24 @@ apollo { // From plugin id: com.apollographql.apollo3
         alwaysGenerateTypesMatching.add("Locale")
     }
 }
+
+// Workaround for https://github.com/HedvigInsurance/key-gear/pull/39
+tasks.withType(com.apollographql.apollo3.gradle.internal.ApolloDownloadSchemaTask::class.java) {
+    doLast {
+        val downloadedSchema = file("src/commonMain/graphql/com/hedvig/embarkx/schema.graphqls")
+        val patchedSchema = file("src/commonMain/graphql/com/hedvig/embarkx/schema.graphqls")
+        patchedSchema.writeText(
+            downloadedSchema.readText()
+                .replace(
+                    oldValue = "\"\"\"${System.lineSeparator()}  \\\"\"\"",
+                    newValue = "\"\"\"",
+                    ignoreCase = false
+                )
+                .replace(
+                    oldValue = "\\\"\"\"${System.lineSeparator()}  \"\"\"",
+                    newValue = "\"\"\"",
+                    ignoreCase = false
+                )
+        )
+    }
+}
