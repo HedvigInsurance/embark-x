@@ -5,6 +5,7 @@ import com.apollographql.apollo3.ApolloClient
 import com.apollographql.apollo3.annotations.ApolloExperimental
 import com.apollographql.apollo3.testing.enqueueTestNetworkError
 import com.apollographql.apollo3.testing.enqueueTestResponse
+import com.apollographql.apollo3.testing.runTest
 import com.hedvig.embarkx.apollo.ApolloError
 import com.hedvig.embarkx.apollo.apolloModule
 import com.hedvig.embarkx.initializeDi
@@ -19,7 +20,6 @@ import kotlin.test.AfterTest
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.runTest
 import org.koin.core.context.stopKoin
 
 @OptIn(ApolloExperimental::class, ExperimentalCoroutinesApi::class)
@@ -56,7 +56,7 @@ class GetEmbarkStoryUseCaseTest {
     }
 
     @Test
-    fun noDataErrorReturnsWhenThereIsNoData() = runTest(dispatchTimeoutMs = 5_000L) {
+    fun noDataErrorReturnsWhenThereIsNoData() = runTest {
         val storyName = "storyName"
         val locale = Locale.en_SE
         val testQuery = EmbarkStoryQuery(storyName = storyName, locale = locale.rawValue)
@@ -77,7 +77,7 @@ class GetEmbarkStoryUseCaseTest {
     }
 
     @Test
-    fun errorShowsWhenThereAreErrorsIncludedInTheGraphQLResponse() = runTest(dispatchTimeoutMs = 5_000L) {
+    fun errorShowsWhenThereAreErrorsIncludedInTheGraphQLResponse() = runTest {
         val storyName = "storyName"
         val locale = Locale.en_SE
         val testQuery = EmbarkStoryQuery(storyName = storyName, locale = locale.rawValue)
