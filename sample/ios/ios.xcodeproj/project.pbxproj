@@ -308,6 +308,8 @@
 		36A1B20127C66972002B00CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1B20027C66972002B00CE /* ContentView.swift */; };
 		36A1B20327C66973002B00CE /* AppAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36A1B20227C66973002B00CE /* AppAssets.xcassets */; };
 		36A1B20627C66973002B00CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36A1B20527C66973002B00CE /* Preview Assets.xcassets */; };
+		55E2DCB727C7E2E40068C072 /* Koin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E2DCB627C7E2E40068C072 /* Koin.swift */; };
+		55E2DCB927C7E4EF0068C072 /* ContentViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E2DCB827C7E4EF0068C072 /* ContentViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -602,6 +604,8 @@
 		36A1B20027C66972002B00CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		36A1B20227C66973002B00CE /* AppAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppAssets.xcassets; sourceTree = "<group>"; };
 		36A1B20527C66973002B00CE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		55E2DCB627C7E2E40068C072 /* Koin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Koin.swift; sourceTree = "<group>"; };
+		55E2DCB827C7E4EF0068C072 /* ContentViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1351,6 +1355,8 @@
 				36A1B20027C66972002B00CE /* ContentView.swift */,
 				36A1B20227C66973002B00CE /* AppAssets.xcassets */,
 				36A1B20427C66973002B00CE /* Preview Content */,
+				55E2DCB627C7E2E40068C072 /* Koin.swift */,
+				55E2DCB827C7E4EF0068C072 /* ContentViewViewModel.swift */,
 			);
 			path = ios;
 			sourceTree = "<group>";
@@ -1592,6 +1598,7 @@
 				36167BBB27C67800003D11A1 /* Tooltip.swift in Sources */,
 				36167BCD27C67800003D11A1 /* hRow.swift in Sources */,
 				3607856327C77C3E007421E1 /* String+Tokens.swift in Sources */,
+				55E2DCB727C7E2E40068C072 /* Koin.swift in Sources */,
 				36167CB127C67CE8003D11A1 /* String+Links.swift in Sources */,
 				3607856027C77C3E007421E1 /* EmbarkInput.swift in Sources */,
 				36167BD927C67800003D11A1 /* ActivityIndicator.swift in Sources */,
@@ -1756,6 +1763,7 @@
 				36167BD427C67800003D11A1 /* Bullet.swift in Sources */,
 				36167CBC27C67CE8003D11A1 /* UIColor+Interpolate.swift in Sources */,
 				3607854C27C77C3E007421E1 /* AddressNotFoundRow.swift in Sources */,
+				55E2DCB927C7E4EF0068C072 /* ContentViewViewModel.swift in Sources */,
 				36167BE127C67800003D11A1 /* PerilCollection.swift in Sources */,
 				36167C0D27C67800003D11A1 /* PagerProceedButton.swift in Sources */,
 				36167D4C27C6861C003D11A1 /* FAQModels.swift in Sources */,
