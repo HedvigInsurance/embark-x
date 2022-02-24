@@ -15,6 +15,8 @@ jobs:
           java-version: '11'
           distribution: 'zulu'
           cache: 'gradle'
+      - name: Download Apollo Schema
+        run: ./gradlew shared:downloadGiraffeApolloSchema
       - name: Run Unit-tests
         run: ./gradlew testDebugUnitTest
       - name: Report Test-results
