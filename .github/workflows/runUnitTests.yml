@@ -1,0 +1,26 @@
+name: Run Unit-tests
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+jobs:
+  run_unit_tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup JDK 11
+        uses: actions/setup-java@v2.5.0
+        with:
+          java-version: '11'
+          distribution: 'zulu'
+          cache: 'gradle'
+      - name: Run Unit-tests
+        run: ./gradlew testDebugUnitTest
+      - name: Report Test-results
+        uses: dorny/test-reporter@v1
+        if: success() || failure()
+        with:
+          name: Shared Tests
+          path: shared/build/test-results/testDebugUnitTest/*.xml
+          reporter: java-junit
