@@ -20,12 +20,18 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-      - run: ./gradlew createSwiftPackage
+      - run: ./gradlew assembleEmbarkXXCFramework
+      - name: ZIP and Copy Framework
+        run: |
+          cd shared/build/XCFrameworks/release/;
+          zip -r EmbarkX-${{ steps.findNextTag.outputs.new_tag }}.zip EmbarkX.xcframework;
+          cp EmbarkX-${{ steps.findNextTag.outputs.new_tag }}.zip $GITHUB_WORKSPACE/EmbarkX-${{ steps.findNextTag.outputs.new_tag }}.zip;
+          cd $GITHUB_WORKSPACE
       - name: Release
         id: release
         uses: softprops/action-gh-release@fe9a9bd3295828558c7a3c004f23f3bf77d155b2
         with:
-          files: shared/swiftpackage/EmbarkX-*.zip
+          files: EmbarkX-${{ steps.findNextTag.outputs.new_tag }}.zip
           tag_name: ${{ steps.findNextTag.outputs.new_tag }}
       - name: Set XCFramework Replace URL
         id: xcframework
@@ -37,7 +43,7 @@ jobs:
       - name: Get checksum of XCFramework ZIP
         id: checksum
         run: |
-          echo ::set-output name=checksum::$(swift package compute-checksum shared/swiftpackage/EmbarkX-*.zip)
+          echo ::set-output name=checksum::$(swift package compute-checksum EmbarkX-${{ steps.findNextTag.outputs.new_tag }}.zip)
       - name: Replace checksum in Package.swift
         run: |
           find . -type f -name 'Package.swift' -exec sed -i '' 's#checksum: \".*\"#checksum: \"${{ steps.checksum.outputs.checksum }}\"#g' {} +

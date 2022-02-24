@@ -39,4 +39,14 @@ class EmbarkStoreTest {
 
         store.getPrefill("foo") shouldBe "bar"
     }
+
+    @Test
+    fun shouldEvaluateComputedValue() {
+        val store = EmbarkStore()
+        store.computedValues = mapOf(
+            "foo" to "'bar'"
+        )
+
+        store.get("foo") shouldBe "bar"
+    }
 }

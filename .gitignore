@@ -9,7 +9,7 @@
 .externalNativeBuild
 .cxx
 local.properties
-shared/swiftpackage/*
+EmbarkX-*.zip
 
 # Apollo related files
 **/*.graphqls
