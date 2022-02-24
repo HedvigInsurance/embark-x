@@ -25,7 +25,10 @@ kotlin {
 
     sourceSets {
         all {
-            languageSettings.optIn("kotlin.js.ExperimentalJsExport")
+            languageSettings {
+                optIn("kotlin.js.ExperimentalJsExport")
+                optIn("kotlin.RequiresOptIn")
+            }
         }
 
         val commonMain by getting {
