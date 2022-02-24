@@ -63,6 +63,9 @@ kotlin {
         @Suppress("UNUSED_VARIABLE")
         val jsMain by getting {
             dependsOn(commonMain)
+            dependencies {
+                implementation("org.jetbrains.kotlin-wrappers:kotlin-extensions:1.0.1-pre.304-kotlin-1.6.10")
+            }
         }
 
         @Suppress("UNUSED_VARIABLE")

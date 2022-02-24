@@ -7,7 +7,7 @@ import kotlin.js.JsExport
 @JsExport
 class EmbarkStore {
     private val versions = Stack<Map<String, String?>>().apply { push(emptyMap()) }
-    private val stage = mutableMapOf<String, String?>()
+    internal val stage = mutableMapOf<String, String?>()
     private val prefill = mutableMapOf<String, String?>()
 
     var computedValues: Map<String, String> = emptyMap()
