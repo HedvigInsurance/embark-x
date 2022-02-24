@@ -17,13 +17,26 @@ buildscript {
     }
 }
 
+plugins {
+    id("com.diffplug.spotless") version "6.3.0"
+}
+
+spotless {
+    kotlin {
+        target("**/*.kt")
+        ktlint("0.44.0")
+    }
+}
+
 allprojects {
     repositories {
         google()
         mavenCentral()
+        jcenter()
     }
 }
 
 rootProject.plugins.withType<org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootPlugin> {
-    rootProject.the<org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension>().nodeVersion = "16.13.0"
+    rootProject.the<org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension>().nodeVersion =
+        "16.13.0"
 }

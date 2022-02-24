@@ -10,4 +10,8 @@
 .cxx
 local.properties
 EmbarkX-*.zip
-/sample/ios/ios.xcodeproj/project.xcworkspace/xcuserdata/tarikstafford.xcuserdatad/UserInterfaceState.xcuserstate
+/sample/ios/ios.xcodeproj/project.xcworkspace/xcuserdata/*
+
+
+# Apollo related files
+**/*.graphqls

@@ -1,0 +1,36 @@
+fragment ApiFragment on EmbarkApi {
+    ... on EmbarkApiGraphQLQuery {
+        queryData: data {
+            query
+            results {
+                ...GraphQLResultsFragment
+            }
+            errors {
+                ...GraphQLErrorsFragment
+            }
+            variables {
+                ...GraphQLVariablesFragment
+            }
+            next {
+                ...EmbarkLinkFragment
+            }
+        }
+    }
+    ... on EmbarkApiGraphQLMutation {
+        mutationData: data {
+            mutation
+            results {
+                ...GraphQLResultsFragment
+            }
+            variables {
+                ...GraphQLVariablesFragment
+            }
+            errors {
+                ...GraphQLErrorsFragment
+            }
+            next {
+                ...EmbarkLinkFragment
+            }
+        }
+    }
+}

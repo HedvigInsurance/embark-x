@@ -1,0 +1,4 @@
+fragment EmbarkLinkFragment on EmbarkLink {
+    name
+    label
+}

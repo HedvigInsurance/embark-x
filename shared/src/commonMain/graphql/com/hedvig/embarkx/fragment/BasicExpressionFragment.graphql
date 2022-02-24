@@ -1,0 +1,12 @@
+fragment BasicExpressionFragment on EmbarkExpression {
+    ... on EmbarkExpressionUnary {
+        unaryType: type
+        text
+    }
+    ... on EmbarkExpressionBinary {
+        binaryType: type
+        key
+        value
+        text
+    }
+}

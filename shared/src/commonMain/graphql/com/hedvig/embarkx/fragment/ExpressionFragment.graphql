@@ -1,0 +1,24 @@
+fragment ExpressionFragment on EmbarkExpression {
+    ...BasicExpressionFragment
+    ... on EmbarkExpressionMultiple {
+        multipleType: type
+        text
+        subExpressions {
+            ...BasicExpressionFragment
+            ... on EmbarkExpressionMultiple {
+                multipleType: type
+                text
+                subExpressions {
+                    ...BasicExpressionFragment
+                    ... on EmbarkExpressionMultiple {
+                        multipleType: type
+                        text
+                        subExpressions {
+                            ...BasicExpressionFragment
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,6 @@
+fragment MessageFragment on EmbarkMessage {
+    expressions {
+        ...ExpressionFragment
+    }
+    text
+}

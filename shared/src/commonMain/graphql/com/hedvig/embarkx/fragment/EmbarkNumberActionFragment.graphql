@@ -1,0 +1,11 @@
+fragment EmbarkNumberActionFragment on EmbarkNumberActionData {
+    key
+    placeholder
+    unit
+    label
+    maxValue
+    minValue
+    link {
+        ...EmbarkLinkFragment
+    }
+}
