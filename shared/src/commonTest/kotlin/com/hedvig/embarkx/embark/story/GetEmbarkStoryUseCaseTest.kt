@@ -21,21 +21,21 @@ import kotlin.test.Test
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.koin.core.context.stopKoin
-import org.koin.test.KoinTest
-import org.koin.test.inject
 
 @OptIn(ApolloExperimental::class, ExperimentalCoroutinesApi::class)
-class GetEmbarkStoryUseCaseTest : KoinTest {
+class GetEmbarkStoryUseCaseTest {
 
-    private val apolloClient: ApolloClient by inject()
-    private val getEmbarkStoryUseCase: GetEmbarkStoryUseCase by inject()
+    private lateinit var apolloClient: ApolloClient
+    private lateinit var getEmbarkStoryUseCase: GetEmbarkStoryUseCase
 
-    @BeforeTest // todo look into making this a @rule somehow to avoid boilerplate? Maybe that's possible
+    @BeforeTest
     fun setUp() {
-        initializeDi {
+        val koin = initializeDi {
             unloadModules(apolloModule)
             modules(apolloModuleTest)
         }
+        apolloClient = koin.koin.get()
+        getEmbarkStoryUseCase = koin.koin.get()
     }
 
     @AfterTest
@@ -56,7 +56,7 @@ class GetEmbarkStoryUseCaseTest : KoinTest {
     }
 
     @Test
-    fun noDataErrorReturnsWhenThereIsNoData() = runTest {
+    fun noDataErrorReturnsWhenThereIsNoData() = runTest(dispatchTimeoutMs = 5_000L) {
         val storyName = "storyName"
         val locale = Locale.en_SE
         val testQuery = EmbarkStoryQuery(storyName = storyName, locale = locale.rawValue)
@@ -77,7 +77,7 @@ class GetEmbarkStoryUseCaseTest : KoinTest {
     }
 
     @Test
-    fun errorShowsWhenThereAreErrorsIncludedInTheGraphQLResponse() = runTest {
+    fun errorShowsWhenThereAreErrorsIncludedInTheGraphQLResponse() = runTest(dispatchTimeoutMs = 5_000L) {
         val storyName = "storyName"
         val locale = Locale.en_SE
         val testQuery = EmbarkStoryQuery(storyName = storyName, locale = locale.rawValue)
