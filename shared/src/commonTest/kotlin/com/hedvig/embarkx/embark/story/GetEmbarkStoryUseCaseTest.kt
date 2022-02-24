@@ -97,6 +97,15 @@ class GetEmbarkStoryUseCaseTest : KoinTest {
                                 location = "asdf"
                             }
                         }
+                        messages = listOf(
+                            message {
+                                expressions = listOf(
+                                    otherExpression {
+                                        __typename = "OtherExpression" // Have to add this to avoid: java.lang.IllegalStateException: __typename is not known at compile-time for this type. Please specify it explicitely
+                                    }
+                                )
+                            }
+                        )
                     }
                 )
             }
