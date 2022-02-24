@@ -12,6 +12,7 @@ import com.hedvig.giraffe.EmbarkStoryQuery
 import com.hedvig.giraffe.test.EmbarkStoryQuery_TestBuilder.Data
 import com.hedvig.giraffe.type.Locale
 import io.kotest.matchers.should
+import io.kotest.matchers.shouldBe
 import io.kotest.matchers.shouldNot
 import io.kotest.matchers.types.beOfType
 import kotlin.test.AfterTest
@@ -74,7 +75,7 @@ class GetEmbarkStoryUseCaseTest : KoinTest {
     }
 
     @Test
-    fun successfulRequestReturnsTheContainingData() /* = runTest */ {
+    fun successfulRequestReturnsTheContainingData()  = runTest  {
         val storyName = "storyName"
         val locale = Locale.en_SE
         val firstPassage = "firstPassage"
@@ -105,12 +106,10 @@ class GetEmbarkStoryUseCaseTest : KoinTest {
             data = responseObject,
             errors = null
         )
-//        Comment out the suspending function for now, to improve debuggability by not being inside a coroutine
-//        val result = getEmbarkStoryUseCase.invoke(EmbarkStoryName(storyName), locale)
-//        result should beOfType<Either.Right<*>>()
-//        val embarkStory = (result as Either.Right).value
-//        embarkStory.startPassage shouldBe firstPassage
-//        embarkStory.computedStoreValues shouldBe listOf(EmbarkStoryQuery.ComputedStoreValue("key", "value"))
-//    }
+        val result = getEmbarkStoryUseCase.invoke(EmbarkStoryName(storyName), locale)
+        result should beOfType<Either.Right<*>>()
+        val embarkStory = (result as Either.Right).value
+        embarkStory.startPassage shouldBe firstPassage
+        embarkStory.computedStoreValues shouldBe listOf(EmbarkStoryQuery.ComputedStoreValue("key", "value"))
     }
 }
