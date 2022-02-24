@@ -7,6 +7,59 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3607853327C77C3E007421E1 /* EmbarkState+Tracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360784EF27C77C3E007421E1 /* EmbarkState+Tracking.swift */; };
+		3607853427C77C3E007421E1 /* EmbarkState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360784F027C77C3E007421E1 /* EmbarkState.swift */; };
+		3607853527C77C3E007421E1 /* EmbarkPlans.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360784F127C77C3E007421E1 /* EmbarkPlans.swift */; };
+		3607853627C77C3E007421E1 /* EmbarkState+API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360784F227C77C3E007421E1 /* EmbarkState+API.swift */; };
+		3607853727C77C3E007421E1 /* AddressAutocomplete.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360784F527C77C3E007421E1 /* AddressAutocomplete.graphql.swift */; };
+		3607853827C77C3E007421E1 /* EmbarkStoryNames.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360784F627C77C3E007421E1 /* EmbarkStoryNames.graphql.swift */; };
+		3607853927C77C3E007421E1 /* EmbarkPlans.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360784F727C77C3E007421E1 /* EmbarkPlans.graphql.swift */; };
+		3607853B27C77C3E007421E1 /* InsuranceProviders.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360784F927C77C3E007421E1 /* InsuranceProviders.graphql.swift */; };
+		3607853C27C77C3E007421E1 /* EmbarkStory.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360784FA27C77C3E007421E1 /* EmbarkStory.graphql.swift */; };
+		3607853D27C77C3E007421E1 /* Passage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360784FC27C77C3E007421E1 /* Passage.swift */; };
+		3607853E27C77C3E007421E1 /* EmbarkMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360784FD27C77C3E007421E1 /* EmbarkMessages.swift */; };
+		3607853F27C77C3E007421E1 /* Embark+ShadowProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360784FE27C77C3E007421E1 /* Embark+ShadowProperties.swift */; };
+		3607854027C77C3E007421E1 /* EmbarkTooltips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360784FF27C77C3E007421E1 /* EmbarkTooltips.swift */; };
+		3607854127C77C3E007421E1 /* PlanRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607850027C77C3E007421E1 /* PlanRow.swift */; };
+		3607854227C77C3E007421E1 /* InsuranceProviderLoginDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607850327C77C3E007421E1 /* InsuranceProviderLoginDetails.swift */; };
+		3607854327C77C3E007421E1 /* InsuranceProviderAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607850427C77C3E007421E1 /* InsuranceProviderAction.swift */; };
+		3607854427C77C3E007421E1 /* InsuranceProviderCollectionAgreement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607850527C77C3E007421E1 /* InsuranceProviderCollectionAgreement.swift */; };
+		3607854527C77C3E007421E1 /* EmbarkTextAction+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607850727C77C3E007421E1 /* EmbarkTextAction+Animation.swift */; };
+		3607854627C77C3E007421E1 /* EmbarkTextAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607850827C77C3E007421E1 /* EmbarkTextAction.swift */; };
+		3607854727C77C3E007421E1 /* EmbarkRecordAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607850A27C77C3E007421E1 /* EmbarkRecordAction.swift */; };
+		3607854827C77C3E007421E1 /* EmbarkPlayRecordedTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607850B27C77C3E007421E1 /* EmbarkPlayRecordedTrack.swift */; };
+		3607854927C77C3E007421E1 /* EmbarkAudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607850C27C77C3E007421E1 /* EmbarkAudioManager.swift */; };
+		3607854A27C77C3E007421E1 /* AddressInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607850E27C77C3E007421E1 /* AddressInput.swift */; };
+		3607854B27C77C3E007421E1 /* EmbarkAddressAutocomplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607850F27C77C3E007421E1 /* EmbarkAddressAutocomplete.swift */; };
+		3607854C27C77C3E007421E1 /* AddressNotFoundRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607851027C77C3E007421E1 /* AddressNotFoundRow.swift */; };
+		3607854D27C77C3E007421E1 /* AddressState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607851127C77C3E007421E1 /* AddressState.swift */; };
+		3607854E27C77C3E007421E1 /* AddressTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607851227C77C3E007421E1 /* AddressTransition.swift */; };
+		3607854F27C77C3E007421E1 /* EmbarkAddressAutocompleteAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607851327C77C3E007421E1 /* EmbarkAddressAutocompleteAction.swift */; };
+		3607855027C77C3E007421E1 /* AddressRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607851427C77C3E007421E1 /* AddressRow.swift */; };
+		3607855127C77C3E007421E1 /* EmbarkActionSetInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607851527C77C3E007421E1 /* EmbarkActionSetInput.swift */; };
+		3607855227C77C3E007421E1 /* EmbarkSelectActionOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607851727C77C3E007421E1 /* EmbarkSelectActionOption.swift */; };
+		3607855327C77C3E007421E1 /* EmbarkSelectAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607851827C77C3E007421E1 /* EmbarkSelectAction.swift */; };
+		3607855427C77C3E007421E1 /* EmbarkNumberAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607851A27C77C3E007421E1 /* EmbarkNumberAction.swift */; };
+		3607855527C77C3E007421E1 /* MultiActionAddObjectRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607851D27C77C3E007421E1 /* MultiActionAddObjectRow.swift */; };
+		3607855627C77C3E007421E1 /* MultiActionValueRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607851E27C77C3E007421E1 /* MultiActionValueRow.swift */; };
+		3607855727C77C3E007421E1 /* MultiActionNumberRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607852027C77C3E007421E1 /* MultiActionNumberRow.swift */; };
+		3607855827C77C3E007421E1 /* MultiActionSwitchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607852127C77C3E007421E1 /* MultiActionSwitchRow.swift */; };
+		3607855927C77C3E007421E1 /* MultiActionDropDownRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607852227C77C3E007421E1 /* MultiActionDropDownRow.swift */; };
+		3607855A27C77C3E007421E1 /* MultiAction+Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607852327C77C3E007421E1 /* MultiAction+Store.swift */; };
+		3607855B27C77C3E007421E1 /* MultiAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607852427C77C3E007421E1 /* MultiAction.swift */; };
+		3607855C27C77C3E007421E1 /* MultiAction+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607852527C77C3E007421E1 /* MultiAction+DataSource.swift */; };
+		3607855D27C77C3E007421E1 /* MultiActionTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607852627C77C3E007421E1 /* MultiActionTable.swift */; };
+		3607855E27C77C3E007421E1 /* DatePickerAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607852827C77C3E007421E1 /* DatePickerAction.swift */; };
+		3607855F27C77C3E007421E1 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607852927C77C3E007421E1 /* Action.swift */; };
+		3607856027C77C3E007421E1 /* EmbarkInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607852A27C77C3E007421E1 /* EmbarkInput.swift */; };
+		3607856127C77C3E007421E1 /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607852B27C77C3E007421E1 /* MessageBubble.swift */; };
+		3607856227C77C3E007421E1 /* Array<Token>+AbstractExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607852D27C77C3E007421E1 /* Array<Token>+AbstractExpression.swift */; };
+		3607856327C77C3E007421E1 /* String+Tokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607852E27C77C3E007421E1 /* String+Tokens.swift */; };
+		3607856427C77C3E007421E1 /* TokenCheckers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607852F27C77C3E007421E1 /* TokenCheckers.swift */; };
+		3607856527C77C3E007421E1 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607853027C77C3E007421E1 /* Token.swift */; };
+		3607856627C77C3E007421E1 /* Embark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607853127C77C3E007421E1 /* Embark.swift */; };
+		3607856727C77C3E007421E1 /* EmbarkStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3607853227C77C3E007421E1 /* EmbarkStore.swift */; };
+		3607856A27C77D35007421E1 /* Swifter in Frameworks */ = {isa = PBXBuildFile; productRef = 3607856927C77D35007421E1 /* Swifter */; };
 		36167BA127C67800003D11A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36167AFF27C67800003D11A1 /* Assets.xcassets */; };
 		36167BA227C67800003D11A1 /* hDesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36167B0127C67800003D11A1 /* hDesignSystem.swift */; };
 		36167BA327C67800003D11A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36167B0227C67800003D11A1 /* AppDelegate.swift */; };
@@ -262,6 +315,58 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		360784EF27C77C3E007421E1 /* EmbarkState+Tracking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EmbarkState+Tracking.swift"; sourceTree = "<group>"; };
+		360784F027C77C3E007421E1 /* EmbarkState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbarkState.swift; sourceTree = "<group>"; };
+		360784F127C77C3E007421E1 /* EmbarkPlans.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbarkPlans.swift; sourceTree = "<group>"; };
+		360784F227C77C3E007421E1 /* EmbarkState+API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EmbarkState+API.swift"; sourceTree = "<group>"; };
+		360784F527C77C3E007421E1 /* AddressAutocomplete.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressAutocomplete.graphql.swift; sourceTree = "<group>"; };
+		360784F627C77C3E007421E1 /* EmbarkStoryNames.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbarkStoryNames.graphql.swift; sourceTree = "<group>"; };
+		360784F727C77C3E007421E1 /* EmbarkPlans.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbarkPlans.graphql.swift; sourceTree = "<group>"; };
+		360784F927C77C3E007421E1 /* InsuranceProviders.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceProviders.graphql.swift; sourceTree = "<group>"; };
+		360784FA27C77C3E007421E1 /* EmbarkStory.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbarkStory.graphql.swift; sourceTree = "<group>"; };
+		360784FC27C77C3E007421E1 /* Passage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Passage.swift; sourceTree = "<group>"; };
+		360784FD27C77C3E007421E1 /* EmbarkMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbarkMessages.swift; sourceTree = "<group>"; };
+		360784FE27C77C3E007421E1 /* Embark+ShadowProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Embark+ShadowProperties.swift"; sourceTree = "<group>"; };
+		360784FF27C77C3E007421E1 /* EmbarkTooltips.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbarkTooltips.swift; sourceTree = "<group>"; };
+		3607850027C77C3E007421E1 /* PlanRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanRow.swift; sourceTree = "<group>"; };
+		3607850327C77C3E007421E1 /* InsuranceProviderLoginDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceProviderLoginDetails.swift; sourceTree = "<group>"; };
+		3607850427C77C3E007421E1 /* InsuranceProviderAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceProviderAction.swift; sourceTree = "<group>"; };
+		3607850527C77C3E007421E1 /* InsuranceProviderCollectionAgreement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceProviderCollectionAgreement.swift; sourceTree = "<group>"; };
+		3607850727C77C3E007421E1 /* EmbarkTextAction+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EmbarkTextAction+Animation.swift"; sourceTree = "<group>"; };
+		3607850827C77C3E007421E1 /* EmbarkTextAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbarkTextAction.swift; sourceTree = "<group>"; };
+		3607850A27C77C3E007421E1 /* EmbarkRecordAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbarkRecordAction.swift; sourceTree = "<group>"; };
+		3607850B27C77C3E007421E1 /* EmbarkPlayRecordedTrack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbarkPlayRecordedTrack.swift; sourceTree = "<group>"; };
+		3607850C27C77C3E007421E1 /* EmbarkAudioManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbarkAudioManager.swift; sourceTree = "<group>"; };
+		3607850E27C77C3E007421E1 /* AddressInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressInput.swift; sourceTree = "<group>"; };
+		3607850F27C77C3E007421E1 /* EmbarkAddressAutocomplete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbarkAddressAutocomplete.swift; sourceTree = "<group>"; };
+		3607851027C77C3E007421E1 /* AddressNotFoundRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressNotFoundRow.swift; sourceTree = "<group>"; };
+		3607851127C77C3E007421E1 /* AddressState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressState.swift; sourceTree = "<group>"; };
+		3607851227C77C3E007421E1 /* AddressTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressTransition.swift; sourceTree = "<group>"; };
+		3607851327C77C3E007421E1 /* EmbarkAddressAutocompleteAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbarkAddressAutocompleteAction.swift; sourceTree = "<group>"; };
+		3607851427C77C3E007421E1 /* AddressRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressRow.swift; sourceTree = "<group>"; };
+		3607851527C77C3E007421E1 /* EmbarkActionSetInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbarkActionSetInput.swift; sourceTree = "<group>"; };
+		3607851727C77C3E007421E1 /* EmbarkSelectActionOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbarkSelectActionOption.swift; sourceTree = "<group>"; };
+		3607851827C77C3E007421E1 /* EmbarkSelectAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbarkSelectAction.swift; sourceTree = "<group>"; };
+		3607851A27C77C3E007421E1 /* EmbarkNumberAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbarkNumberAction.swift; sourceTree = "<group>"; };
+		3607851D27C77C3E007421E1 /* MultiActionAddObjectRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiActionAddObjectRow.swift; sourceTree = "<group>"; };
+		3607851E27C77C3E007421E1 /* MultiActionValueRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiActionValueRow.swift; sourceTree = "<group>"; };
+		3607852027C77C3E007421E1 /* MultiActionNumberRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiActionNumberRow.swift; sourceTree = "<group>"; };
+		3607852127C77C3E007421E1 /* MultiActionSwitchRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiActionSwitchRow.swift; sourceTree = "<group>"; };
+		3607852227C77C3E007421E1 /* MultiActionDropDownRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiActionDropDownRow.swift; sourceTree = "<group>"; };
+		3607852327C77C3E007421E1 /* MultiAction+Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MultiAction+Store.swift"; sourceTree = "<group>"; };
+		3607852427C77C3E007421E1 /* MultiAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiAction.swift; sourceTree = "<group>"; };
+		3607852527C77C3E007421E1 /* MultiAction+DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MultiAction+DataSource.swift"; sourceTree = "<group>"; };
+		3607852627C77C3E007421E1 /* MultiActionTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiActionTable.swift; sourceTree = "<group>"; };
+		3607852827C77C3E007421E1 /* DatePickerAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerAction.swift; sourceTree = "<group>"; };
+		3607852927C77C3E007421E1 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		3607852A27C77C3E007421E1 /* EmbarkInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbarkInput.swift; sourceTree = "<group>"; };
+		3607852B27C77C3E007421E1 /* MessageBubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageBubble.swift; sourceTree = "<group>"; };
+		3607852D27C77C3E007421E1 /* Array<Token>+AbstractExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array<Token>+AbstractExpression.swift"; sourceTree = "<group>"; };
+		3607852E27C77C3E007421E1 /* String+Tokens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Tokens.swift"; sourceTree = "<group>"; };
+		3607852F27C77C3E007421E1 /* TokenCheckers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenCheckers.swift; sourceTree = "<group>"; };
+		3607853027C77C3E007421E1 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		3607853127C77C3E007421E1 /* Embark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Embark.swift; sourceTree = "<group>"; };
+		3607853227C77C3E007421E1 /* EmbarkStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbarkStore.swift; sourceTree = "<group>"; };
 		36167AFF27C67800003D11A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36167B0127C67800003D11A1 /* hDesignSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hDesignSystem.swift; sourceTree = "<group>"; };
 		36167B0227C67800003D11A1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -517,6 +622,7 @@
 				36167CFF27C681BE003D11A1 /* Disk in Frameworks */,
 				36167D0827C68339003D11A1 /* Runtime in Frameworks */,
 				36167D5727C68665003D11A1 /* Apollo in Frameworks */,
+				3607856A27C77D35007421E1 /* Swifter in Frameworks */,
 				36167D0B27C68466003D11A1 /* MarkdownKit in Frameworks */,
 				36167D0527C682CF003D11A1 /* SnapKit in Frameworks */,
 				36167D5927C68665003D11A1 /* ApolloWebSocket in Frameworks */,
@@ -528,6 +634,185 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		360784EE27C77C3E007421E1 /* Embark */ = {
+			isa = PBXGroup;
+			children = (
+				360784EF27C77C3E007421E1 /* EmbarkState+Tracking.swift */,
+				360784F027C77C3E007421E1 /* EmbarkState.swift */,
+				360784F127C77C3E007421E1 /* EmbarkPlans.swift */,
+				360784F227C77C3E007421E1 /* EmbarkState+API.swift */,
+				360784F327C77C3E007421E1 /* Derived */,
+				360784FB27C77C3E007421E1 /* Viewables */,
+				3607852B27C77C3E007421E1 /* MessageBubble.swift */,
+				3607852C27C77C3E007421E1 /* ComputedValues */,
+				3607853127C77C3E007421E1 /* Embark.swift */,
+				3607853227C77C3E007421E1 /* EmbarkStore.swift */,
+			);
+			path = Embark;
+			sourceTree = "<group>";
+		};
+		360784F327C77C3E007421E1 /* Derived */ = {
+			isa = PBXGroup;
+			children = (
+				360784F427C77C3E007421E1 /* GraphQL */,
+			);
+			path = Derived;
+			sourceTree = "<group>";
+		};
+		360784F427C77C3E007421E1 /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+				360784F527C77C3E007421E1 /* AddressAutocomplete.graphql.swift */,
+				360784F627C77C3E007421E1 /* EmbarkStoryNames.graphql.swift */,
+				360784F727C77C3E007421E1 /* EmbarkPlans.graphql.swift */,
+				360784F927C77C3E007421E1 /* InsuranceProviders.graphql.swift */,
+				360784FA27C77C3E007421E1 /* EmbarkStory.graphql.swift */,
+			);
+			path = GraphQL;
+			sourceTree = "<group>";
+		};
+		360784FB27C77C3E007421E1 /* Viewables */ = {
+			isa = PBXGroup;
+			children = (
+				360784FC27C77C3E007421E1 /* Passage.swift */,
+				360784FD27C77C3E007421E1 /* EmbarkMessages.swift */,
+				360784FE27C77C3E007421E1 /* Embark+ShadowProperties.swift */,
+				360784FF27C77C3E007421E1 /* EmbarkTooltips.swift */,
+				3607850027C77C3E007421E1 /* PlanRow.swift */,
+				3607850127C77C3E007421E1 /* Actions */,
+			);
+			path = Viewables;
+			sourceTree = "<group>";
+		};
+		3607850127C77C3E007421E1 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				3607850227C77C3E007421E1 /* InsuranceProviderAction */,
+				3607850627C77C3E007421E1 /* TextAction */,
+				3607850927C77C3E007421E1 /* RecordAction */,
+				3607850D27C77C3E007421E1 /* AddressAutocompleteAction */,
+				3607851527C77C3E007421E1 /* EmbarkActionSetInput.swift */,
+				3607851627C77C3E007421E1 /* SelectAction */,
+				3607851927C77C3E007421E1 /* NumberAction */,
+				3607851B27C77C3E007421E1 /* MultiAction */,
+				3607852727C77C3E007421E1 /* DatePickerAction */,
+				3607852927C77C3E007421E1 /* Action.swift */,
+				3607852A27C77C3E007421E1 /* EmbarkInput.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		3607850227C77C3E007421E1 /* InsuranceProviderAction */ = {
+			isa = PBXGroup;
+			children = (
+				3607850327C77C3E007421E1 /* InsuranceProviderLoginDetails.swift */,
+				3607850427C77C3E007421E1 /* InsuranceProviderAction.swift */,
+				3607850527C77C3E007421E1 /* InsuranceProviderCollectionAgreement.swift */,
+			);
+			path = InsuranceProviderAction;
+			sourceTree = "<group>";
+		};
+		3607850627C77C3E007421E1 /* TextAction */ = {
+			isa = PBXGroup;
+			children = (
+				3607850727C77C3E007421E1 /* EmbarkTextAction+Animation.swift */,
+				3607850827C77C3E007421E1 /* EmbarkTextAction.swift */,
+			);
+			path = TextAction;
+			sourceTree = "<group>";
+		};
+		3607850927C77C3E007421E1 /* RecordAction */ = {
+			isa = PBXGroup;
+			children = (
+				3607850A27C77C3E007421E1 /* EmbarkRecordAction.swift */,
+				3607850B27C77C3E007421E1 /* EmbarkPlayRecordedTrack.swift */,
+				3607850C27C77C3E007421E1 /* EmbarkAudioManager.swift */,
+			);
+			path = RecordAction;
+			sourceTree = "<group>";
+		};
+		3607850D27C77C3E007421E1 /* AddressAutocompleteAction */ = {
+			isa = PBXGroup;
+			children = (
+				3607850E27C77C3E007421E1 /* AddressInput.swift */,
+				3607850F27C77C3E007421E1 /* EmbarkAddressAutocomplete.swift */,
+				3607851027C77C3E007421E1 /* AddressNotFoundRow.swift */,
+				3607851127C77C3E007421E1 /* AddressState.swift */,
+				3607851227C77C3E007421E1 /* AddressTransition.swift */,
+				3607851327C77C3E007421E1 /* EmbarkAddressAutocompleteAction.swift */,
+				3607851427C77C3E007421E1 /* AddressRow.swift */,
+			);
+			path = AddressAutocompleteAction;
+			sourceTree = "<group>";
+		};
+		3607851627C77C3E007421E1 /* SelectAction */ = {
+			isa = PBXGroup;
+			children = (
+				3607851727C77C3E007421E1 /* EmbarkSelectActionOption.swift */,
+				3607851827C77C3E007421E1 /* EmbarkSelectAction.swift */,
+			);
+			path = SelectAction;
+			sourceTree = "<group>";
+		};
+		3607851927C77C3E007421E1 /* NumberAction */ = {
+			isa = PBXGroup;
+			children = (
+				3607851A27C77C3E007421E1 /* EmbarkNumberAction.swift */,
+			);
+			path = NumberAction;
+			sourceTree = "<group>";
+		};
+		3607851B27C77C3E007421E1 /* MultiAction */ = {
+			isa = PBXGroup;
+			children = (
+				3607851C27C77C3E007421E1 /* Viewables */,
+				3607852327C77C3E007421E1 /* MultiAction+Store.swift */,
+				3607852427C77C3E007421E1 /* MultiAction.swift */,
+				3607852527C77C3E007421E1 /* MultiAction+DataSource.swift */,
+				3607852627C77C3E007421E1 /* MultiActionTable.swift */,
+			);
+			path = MultiAction;
+			sourceTree = "<group>";
+		};
+		3607851C27C77C3E007421E1 /* Viewables */ = {
+			isa = PBXGroup;
+			children = (
+				3607851D27C77C3E007421E1 /* MultiActionAddObjectRow.swift */,
+				3607851E27C77C3E007421E1 /* MultiActionValueRow.swift */,
+				3607851F27C77C3E007421E1 /* MultiActionValueInputRows */,
+			);
+			path = Viewables;
+			sourceTree = "<group>";
+		};
+		3607851F27C77C3E007421E1 /* MultiActionValueInputRows */ = {
+			isa = PBXGroup;
+			children = (
+				3607852027C77C3E007421E1 /* MultiActionNumberRow.swift */,
+				3607852127C77C3E007421E1 /* MultiActionSwitchRow.swift */,
+				3607852227C77C3E007421E1 /* MultiActionDropDownRow.swift */,
+			);
+			path = MultiActionValueInputRows;
+			sourceTree = "<group>";
+		};
+		3607852727C77C3E007421E1 /* DatePickerAction */ = {
+			isa = PBXGroup;
+			children = (
+				3607852827C77C3E007421E1 /* DatePickerAction.swift */,
+			);
+			path = DatePickerAction;
+			sourceTree = "<group>";
+		};
+		3607852C27C77C3E007421E1 /* ComputedValues */ = {
+			isa = PBXGroup;
+			children = (
+				3607852D27C77C3E007421E1 /* Array<Token>+AbstractExpression.swift */,
+				3607852E27C77C3E007421E1 /* String+Tokens.swift */,
+				3607852F27C77C3E007421E1 /* TokenCheckers.swift */,
+				3607853027C77C3E007421E1 /* Token.swift */,
+			);
+			path = ComputedValues;
+			sourceTree = "<group>";
+		};
 		36167AF027C67800003D11A1 /* hCoreUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -1094,6 +1379,7 @@
 		36A1B1FD27C66972002B00CE /* ios */ = {
 			isa = PBXGroup;
 			children = (
+				360784EE27C77C3E007421E1 /* Embark */,
 				36167D0C27C6861C003D11A1 /* hGraphQL */,
 				36167C1827C67CE8003D11A1 /* hCore */,
 				36167AF027C67800003D11A1 /* hCoreUI */,
@@ -1140,6 +1426,7 @@
 				36167D0A27C68466003D11A1 /* MarkdownKit */,
 				36167D5627C68665003D11A1 /* Apollo */,
 				36167D5827C68665003D11A1 /* ApolloWebSocket */,
+				3607856927C77D35007421E1 /* Swifter */,
 			);
 			productName = ios;
 			productReference = 36A1B1FB27C66972002B00CE /* ios.app */;
@@ -1179,6 +1466,7 @@
 				36167D0627C68339003D11A1 /* XCRemoteSwiftPackageReference "Runtime" */,
 				36167D0927C68466003D11A1 /* XCRemoteSwiftPackageReference "MarkdownKit" */,
 				36167D5527C68665003D11A1 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				3607856827C77D35007421E1 /* XCRemoteSwiftPackageReference "swifter" */,
 			);
 			productRefGroup = 36A1B1FC27C66972002B00CE /* Products */;
 			projectDirPath = "";
@@ -1212,6 +1500,7 @@
 			files = (
 				36167D3D27C6861C003D11A1 /* InsurableLimitFragment.graphql.swift in Sources */,
 				36167CBA27C67CE8003D11A1 /* Conditional.swift in Sources */,
+				3607855627C77C3E007421E1 /* MultiActionValueRow.swift in Sources */,
 				36167CED27C67CE8003D11A1 /* Viewable+WrappedIn.swift in Sources */,
 				36167BD727C67800003D11A1 /* Card.swift in Sources */,
 				36167CD127C67CE8003D11A1 /* PresentableViewable.swift in Sources */,
@@ -1233,18 +1522,25 @@
 				36167D4327C6861C003D11A1 /* CreateSession.graphql.swift in Sources */,
 				36167CDD27C67CE8003D11A1 /* FormView+Spacing.swift in Sources */,
 				36167CE227C67CE8003D11A1 /* CoreSignal+Animation.swift in Sources */,
+				3607853827C77C3E007421E1 /* EmbarkStoryNames.graphql.swift in Sources */,
 				36167BC327C67800003D11A1 /* RemoteVectorIcon.swift in Sources */,
 				36167CF127C67CE8003D11A1 /* WKWebView+OpenBankId.swift in Sources */,
+				3607854327C77C3E007421E1 /* InsuranceProviderAction.swift in Sources */,
 				36167CCE27C67CE8003D11A1 /* SectionStyle+Default.swift in Sources */,
+				3607855427C77C3E007421E1 /* EmbarkNumberAction.swift in Sources */,
 				36167BE927C67800003D11A1 /* PresentationStyle+Detented.swift in Sources */,
 				36167CE327C67CE8003D11A1 /* AnimationStyle.swift in Sources */,
 				36167D5B27C68700003D11A1 /* Types.graphql.swift in Sources */,
 				36167D4B27C6861C003D11A1 /* InsuranceTermModels.swift in Sources */,
+				3607854727C77C3E007421E1 /* EmbarkRecordAction.swift in Sources */,
+				3607854B27C77C3E007421E1 /* EmbarkAddressAutocomplete.swift in Sources */,
 				36167BD027C67800003D11A1 /* UIColor+Elevation.swift in Sources */,
 				36167CC427C67CE8003D11A1 /* PasteView.swift in Sources */,
 				36167D4627C6861C003D11A1 /* PerilFragment.graphql.swift in Sources */,
 				36167BFF27C67800003D11A1 /* Pill.swift in Sources */,
+				3607855D27C77C3E007421E1 /* MultiActionTable.swift in Sources */,
 				36167CCC27C67CE8003D11A1 /* TopAlignedCollectionViewFlowLayout.swift in Sources */,
+				3607853927C77C3E007421E1 /* EmbarkPlans.graphql.swift in Sources */,
 				36167CF327C67CE8003D11A1 /* WKWebView+Signal.swift in Sources */,
 				36167CF427C67CE8003D11A1 /* WKWebView+WKUIDelegate.swift in Sources */,
 				36167BC927C67800003D11A1 /* GradientView+DefaultOptions.swift in Sources */,
@@ -1254,7 +1550,9 @@
 				36167C0327C67800003D11A1 /* IconTitleTappableRow.swift in Sources */,
 				36167BC227C67800003D11A1 /* UIView+TitleWordmarkView.swift in Sources */,
 				36167CA527C67CE8003D11A1 /* UIColor+DynamicPolyfill.swift in Sources */,
+				3607855F27C77C3E007421E1 /* Action.swift in Sources */,
 				36167D3B27C6861C003D11A1 /* ResendLoginOTP.graphql.swift in Sources */,
+				3607855927C77C3E007421E1 /* MultiActionDropDownRow.swift in Sources */,
 				36167C8B27C67CE8003D11A1 /* Previews.swift in Sources */,
 				36167BDD27C67800003D11A1 /* KeyValueRow.swift in Sources */,
 				36167D4A27C6861C003D11A1 /* Claims.swift in Sources */,
@@ -1279,11 +1577,13 @@
 				36167C9127C67CE8003D11A1 /* ApplicationContext.swift in Sources */,
 				36167BC527C67800003D11A1 /* MultilineLabel.swift in Sources */,
 				36167CA927C67CE8003D11A1 /* Notification+KeyboardInfo.swift in Sources */,
+				3607855827C77C3E007421E1 /* MultiActionSwitchRow.swift in Sources */,
 				36167D3827C6861C003D11A1 /* ActiveContractBundles.graphql.swift in Sources */,
 				36167C0227C67800003D11A1 /* AppInfoRow.swift in Sources */,
 				36167BC127C67800003D11A1 /* InsurableLimitDetail.swift in Sources */,
 				36167BBA27C67800003D11A1 /* ChatButton.swift in Sources */,
 				36167BC627C67800003D11A1 /* PickerView.swift in Sources */,
+				3607855A27C77C3E007421E1 /* MultiAction+Store.swift in Sources */,
 				36167CC327C67CE8003D11A1 /* UIView+FrameWithoutTransform.swift in Sources */,
 				36167C0A27C67800003D11A1 /* Pager.swift in Sources */,
 				36167BE427C67800003D11A1 /* Fonts.swift in Sources */,
@@ -1293,6 +1593,7 @@
 				36167C9027C67CE8003D11A1 /* MonetaryAmount.swift in Sources */,
 				36167C0E27C67800003D11A1 /* PagerCollection.swift in Sources */,
 				36167BBD27C67800003D11A1 /* hColor.swift in Sources */,
+				3607856727C77C3E007421E1 /* EmbarkStore.swift in Sources */,
 				36167D4E27C6861C003D11A1 /* CrossSellModels.swift in Sources */,
 				36167BFC27C67800003D11A1 /* LoadingIndicator.swift in Sources */,
 				36167BF927C67800003D11A1 /* SlideUpAppear.swift in Sources */,
@@ -1303,22 +1604,30 @@
 				36167C0C27C67800003D11A1 /* PagerDots.swift in Sources */,
 				36167CCA27C67CE8003D11A1 /* View+InlineTitle.swift in Sources */,
 				36167C9527C67CE8003D11A1 /* URL+MimeType.swift in Sources */,
+				3607856427C77C3E007421E1 /* TokenCheckers.swift in Sources */,
 				36167BBB27C67800003D11A1 /* Tooltip.swift in Sources */,
 				36167BCD27C67800003D11A1 /* hRow.swift in Sources */,
+				3607856327C77C3E007421E1 /* String+Tokens.swift in Sources */,
 				36167CB127C67CE8003D11A1 /* String+Links.swift in Sources */,
+				3607856027C77C3E007421E1 /* EmbarkInput.swift in Sources */,
 				36167BD927C67800003D11A1 /* ActivityIndicator.swift in Sources */,
 				36167CBB27C67CE8003D11A1 /* UIView+AnimationSafeIsHidden.swift in Sources */,
+				3607854527C77C3E007421E1 /* EmbarkTextAction+Animation.swift in Sources */,
+				3607854A27C77C3E007421E1 /* AddressInput.swift in Sources */,
 				36167BA327C67800003D11A1 /* AppDelegate.swift in Sources */,
+				3607856127C77C3E007421E1 /* MessageBubble.swift in Sources */,
 				36167BFB27C67800003D11A1 /* GradientView.swift in Sources */,
 				36167BCF27C67800003D11A1 /* hSection.swift in Sources */,
 				36167BDA27C67800003D11A1 /* Localization.Locale.Market+Icon.swift in Sources */,
 				36167BEE27C67800003D11A1 /* ContextGradient.swift in Sources */,
 				36167CEA27C67CE8003D11A1 /* URL+Mock.swift in Sources */,
 				36167C9627C67CE8003D11A1 /* Localization.swift in Sources */,
+				3607854427C77C3E007421E1 /* InsuranceProviderCollectionAgreement.swift in Sources */,
 				36167D5427C6861C003D11A1 /* ApolloClient.swift in Sources */,
 				36167CC127C67CE8003D11A1 /* Date+CurrentMilliseconds.swift in Sources */,
 				36167CD427C67CE8003D11A1 /* CollectionKit+ScrollTo.swift in Sources */,
 				36167CEB27C67CE8003D11A1 /* RowView+Viewable.swift in Sources */,
+				3607853B27C77C3E007421E1 /* InsuranceProviders.graphql.swift in Sources */,
 				36167CC027C67CE8003D11A1 /* CoreSignal+Feedback.swift in Sources */,
 				36167BA427C67800003D11A1 /* SceneDelegate.swift in Sources */,
 				36167CAD27C67CE8003D11A1 /* ViewableAnimator.swift in Sources */,
@@ -1335,37 +1644,48 @@
 				36167CD827C67CE8003D11A1 /* ReadWriteState.swift in Sources */,
 				36167CAE27C67CE8003D11A1 /* Masking.swift in Sources */,
 				36167C8A27C67CE8003D11A1 /* DelayedDisposer.swift in Sources */,
+				3607854827C77C3E007421E1 /* EmbarkPlayRecordedTrack.swift in Sources */,
 				36167BF327C67800003D11A1 /* TextView.swift in Sources */,
+				3607853F27C77C3E007421E1 /* Embark+ShadowProperties.swift in Sources */,
 				36167C8E27C67CE8003D11A1 /* Array+Disposable.swift in Sources */,
+				3607854E27C77C3E007421E1 /* AddressTransition.swift in Sources */,
 				36167C1027C67800003D11A1 /* JourneyPreviewer.swift in Sources */,
 				36167CB927C67CE8003D11A1 /* UIBarButtonItem+Menu.swift in Sources */,
 				36A1B20127C66972002B00CE /* ContentView.swift in Sources */,
+				3607854D27C77C3E007421E1 /* AddressState.swift in Sources */,
 				36167BA227C67800003D11A1 /* hDesignSystem.swift in Sources */,
 				36167CE927C67CE8003D11A1 /* UIScrollView+DidScroll.swift in Sources */,
 				36167BCE27C67800003D11A1 /* hForm.swift in Sources */,
 				36167CAA27C67CE8003D11A1 /* UIControl+DelayedTouchCancel.swift in Sources */,
+				3607855127C77C3E007421E1 /* EmbarkActionSetInput.swift in Sources */,
 				36167CDA27C67CE8003D11A1 /* Array+EmitEachThenEnd.swift in Sources */,
 				36167BD527C67800003D11A1 /* Toasts.swift in Sources */,
 				36167D4727C6861C003D11A1 /* hEnvironment.swift in Sources */,
 				36167CA127C67CE8003D11A1 /* GaussianDistGenerator.swift in Sources */,
 				36167C8F27C67CE8003D11A1 /* MarketGroupJourney.swift in Sources */,
 				36167BC027C67800003D11A1 /* InsurableLimits.swift in Sources */,
+				3607855C27C77C3E007421E1 /* MultiAction+DataSource.swift in Sources */,
 				36167BD627C67800003D11A1 /* hPill.swift in Sources */,
+				3607855E27C77C3E007421E1 /* DatePickerAction.swift in Sources */,
 				36167BE827C67800003D11A1 /* Document.swift in Sources */,
 				36167D5127C6861C003D11A1 /* ApolloClient+Fetch.swift in Sources */,
 				36167CB827C67CE8003D11A1 /* UIView+withLayoutMargins.swift in Sources */,
+				3607855B27C77C3E007421E1 /* MultiAction.swift in Sources */,
+				3607854127C77C3E007421E1 /* PlanRow.swift in Sources */,
 				36167BBE27C67800003D11A1 /* hColorBuilder.swift in Sources */,
 				36167BF727C67800003D11A1 /* Divider.swift in Sources */,
 				36167BF627C67800003D11A1 /* InsuranceTermsSection.swift in Sources */,
 				36167D4127C6861C003D11A1 /* IconFragment.graphql.swift in Sources */,
 				36167C9927C67CE8003D11A1 /* UIScrollView+MakeCollapsible.swift in Sources */,
 				36167D3C27C6861C003D11A1 /* EligibleToCreateClaim.graphql.swift in Sources */,
+				3607855227C77C3E007421E1 /* EmbarkSelectActionOption.swift in Sources */,
 				36167C0127C67800003D11A1 /* PillCollection.swift in Sources */,
 				36167CBF27C67CE8003D11A1 /* Signal+AnimatedDelay.swift in Sources */,
 				36167C9B27C67CE8003D11A1 /* Strings.swift in Sources */,
 				36167C0427C67800003D11A1 /* TriangleView.swift in Sources */,
 				36167BE627C67800003D11A1 /* MarkdownTextView.swift in Sources */,
 				36167C0727C67800003D11A1 /* LoadableButton.swift in Sources */,
+				3607854027C77C3E007421E1 /* EmbarkTooltips.swift in Sources */,
 				36167C0827C67800003D11A1 /* Button.swift in Sources */,
 				36167CE727C67CE8003D11A1 /* JourneyPresentation+HidesBackButton.swift in Sources */,
 				36167C9C27C67CE8003D11A1 /* SignalProvider+LazyBindTo.swift in Sources */,
@@ -1375,11 +1695,14 @@
 				36167BDB27C67800003D11A1 /* Spacing.swift in Sources */,
 				36167CDF27C67CE8003D11A1 /* Radians.swift in Sources */,
 				36167CB727C67CE8003D11A1 /* Disposable+Array.swift in Sources */,
+				3607855727C77C3E007421E1 /* MultiActionNumberRow.swift in Sources */,
 				36167CEF27C67CE8003D11A1 /* UIViewController+Viewable.swift in Sources */,
 				36167D5327C6861C003D11A1 /* NetworkInterceptorProvider.swift in Sources */,
+				3607855027C77C3E007421E1 /* AddressRow.swift in Sources */,
 				36167CF527C67CE8003D11A1 /* Viewable.swift in Sources */,
 				36167BDC27C67800003D11A1 /* hText.swift in Sources */,
 				36167CE527C67CE8003D11A1 /* UICollectionView+AnimatedScroll.swift in Sources */,
+				3607853727C77C3E007421E1 /* AddressAutocomplete.graphql.swift in Sources */,
 				36167BC427C67800003D11A1 /* Assets.swift in Sources */,
 				36167CD327C67CE8003D11A1 /* UIView+LayoutSuperviews.swift in Sources */,
 				36167D3A27C6861C003D11A1 /* CreateLoginOTPAttempt.graphql.swift in Sources */,
@@ -1390,23 +1713,32 @@
 				36167BCC27C67800003D11A1 /* hTextField.swift in Sources */,
 				36167D4227C6861C003D11A1 /* ExtraBuildingFragment.graphql.swift in Sources */,
 				36167CA027C67CE8003D11A1 /* UIView+Presentable.swift in Sources */,
+				3607854227C77C3E007421E1 /* InsuranceProviderLoginDetails.swift in Sources */,
 				36167D3627C6861C003D11A1 /* PayInMethodStatus.graphql.swift in Sources */,
+				3607856627C77C3E007421E1 /* Embark.swift in Sources */,
 				36167CF227C67CE8003D11A1 /* FormView+Viewable.swift in Sources */,
 				36167CA327C67CE8003D11A1 /* PresentableStoreLens.swift in Sources */,
 				36167BFA27C67800003D11A1 /* RaisedCard.swift in Sources */,
 				36167CB327C67CE8003D11A1 /* Dependencies.swift in Sources */,
 				36167C9D27C67CE8003D11A1 /* ApolloClient+Flow.swift in Sources */,
+				3607854627C77C3E007421E1 /* EmbarkTextAction.swift in Sources */,
+				3607855327C77C3E007421E1 /* EmbarkSelectAction.swift in Sources */,
 				36167CAB27C67CE8003D11A1 /* UIScrollView+ContentSizeSignal.swift in Sources */,
 				36167D4F27C6861C003D11A1 /* HighlightModel.swift in Sources */,
 				36167D3927C6861C003D11A1 /* Contracts.graphql.swift in Sources */,
+				3607853527C77C3E007421E1 /* EmbarkPlans.swift in Sources */,
 				36167BD827C67800003D11A1 /* PDFViewer.swift in Sources */,
+				3607853327C77C3E007421E1 /* EmbarkState+Tracking.swift in Sources */,
+				3607853427C77C3E007421E1 /* EmbarkState.swift in Sources */,
 				36167CAF27C67CE8003D11A1 /* UIView+RadiusMask.swift in Sources */,
 				36167CE027C67CE8003D11A1 /* CoreSignal+StringToNumber.swift in Sources */,
 				36167D4D27C6861C003D11A1 /* ContractModels.swift in Sources */,
+				3607854927C77C3E007421E1 /* EmbarkAudioManager.swift in Sources */,
 				36167D4527C6861C003D11A1 /* VerifyLoginOTPAttempt.graphql.swift in Sources */,
 				36167C9727C67CE8003D11A1 /* Notification+CostDidUpdate.swift in Sources */,
 				36167CB027C67CE8003D11A1 /* Catalyst.swift in Sources */,
 				36167BD127C67800003D11A1 /* ButtonSection.swift in Sources */,
+				3607855527C77C3E007421E1 /* MultiActionAddObjectRow.swift in Sources */,
 				36167D3527C6861C003D11A1 /* CostFragment.graphql.swift in Sources */,
 				36167D4427C6861C003D11A1 /* CampaignFragment.graphql.swift in Sources */,
 				36167C0527C67800003D11A1 /* Journey+TabBarDot.swift in Sources */,
@@ -1415,6 +1747,7 @@
 				36167CC727C67CE8003D11A1 /* CoreSignal+Boolean.swift in Sources */,
 				36167CDE27C67CE8003D11A1 /* PresentableStore+Binding.swift in Sources */,
 				36167BF127C67800003D11A1 /* hButton.swift in Sources */,
+				3607853D27C77C3E007421E1 /* Passage.swift in Sources */,
 				36167BDE27C67800003D11A1 /* ExpandableContent.swift in Sources */,
 				36167CD027C67CE8003D11A1 /* Notification+ApplicationWillTerminate.swift in Sources */,
 				36167BBF27C67800003D11A1 /* Presentation+withDismissButton.swift in Sources */,
@@ -1423,6 +1756,7 @@
 				36167BE227C67800003D11A1 /* DynamicSectionStyle+InsetHelper.swift in Sources */,
 				36167CE627C67CE8003D11A1 /* Date+LocalDateString.swift in Sources */,
 				36167CB627C67CE8003D11A1 /* UIBarButtonItem+Viewable.swift in Sources */,
+				3607853627C77C3E007421E1 /* EmbarkState+API.swift in Sources */,
 				36167C0B27C67800003D11A1 /* ContentIconPagerItem.swift in Sources */,
 				36167D4027C6861C003D11A1 /* ContractStatusFragment.graphql.swift in Sources */,
 				36167C9327C67CE8003D11A1 /* JourneyPresentation+configureTitle.swift in Sources */,
@@ -1432,15 +1766,21 @@
 				36167BC827C67800003D11A1 /* Presentable+WithCloseButton.swift in Sources */,
 				36167CBE27C67CE8003D11A1 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				36167C9F27C67CE8003D11A1 /* ScrollView+Inspect.swift in Sources */,
+				3607856527C77C3E007421E1 /* Token.swift in Sources */,
+				3607856227C77C3E007421E1 /* Array<Token>+AbstractExpression.swift in Sources */,
+				3607854F27C77C3E007421E1 /* EmbarkAddressAutocompleteAction.swift in Sources */,
 				36167BCB27C67800003D11A1 /* hRowDivider.swift in Sources */,
 				36167BF827C67800003D11A1 /* CampaignBubble.swift in Sources */,
 				36167C0027C67800003D11A1 /* ReusableSizeable.swift in Sources */,
 				36167BD427C67800003D11A1 /* Bullet.swift in Sources */,
 				36167CBC27C67CE8003D11A1 /* UIColor+Interpolate.swift in Sources */,
+				3607854C27C77C3E007421E1 /* AddressNotFoundRow.swift in Sources */,
 				36167BE127C67800003D11A1 /* PerilCollection.swift in Sources */,
 				36167C0D27C67800003D11A1 /* PagerProceedButton.swift in Sources */,
 				36167D4C27C6861C003D11A1 /* FAQModels.swift in Sources */,
 				36167CD627C67CE8003D11A1 /* HostingView.swift in Sources */,
+				3607853E27C77C3E007421E1 /* EmbarkMessages.swift in Sources */,
+				3607853C27C77C3E007421E1 /* EmbarkStory.graphql.swift in Sources */,
 				36167CCB27C67CE8003D11A1 /* InvertColorSchemeModifier.swift in Sources */,
 				36167BE327C67800003D11A1 /* ImageTextAction.swift in Sources */,
 				36167CE427C67CE8003D11A1 /* SpringAnimationStyle.swift in Sources */,
@@ -1662,6 +2002,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3607856827C77D35007421E1 /* XCRemoteSwiftPackageReference "swifter" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/httpswift/swifter.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
 		36167C1127C67B69003D11A1 /* XCRemoteSwiftPackageReference "Flow" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/HedvigInsurance/Flow";
@@ -1737,6 +2085,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3607856927C77D35007421E1 /* Swifter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3607856827C77D35007421E1 /* XCRemoteSwiftPackageReference "swifter" */;
+			productName = Swifter;
+		};
 		36167C1227C67B69003D11A1 /* Flow */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 36167C1127C67B69003D11A1 /* XCRemoteSwiftPackageReference "Flow" */;

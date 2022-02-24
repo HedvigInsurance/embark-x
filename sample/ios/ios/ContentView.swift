@@ -1,9 +1,10 @@
 import SwiftUI
 import Form
+import shared
 
 struct ContentView: View {
     var body: some View {
-        Text("shared.Greeting().greeting()")
+        Text(shared.Greeting().greeting())
             .padding()
     }
 }
