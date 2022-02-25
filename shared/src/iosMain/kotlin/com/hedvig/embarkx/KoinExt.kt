@@ -1,9 +1,9 @@
 package com.hedvig.embarkx
 
-import kotlin.reflect.KClass
 import kotlinx.cinterop.ObjCClass
 import kotlinx.cinterop.getOriginalKotlinClass
 import org.koin.core.Koin
+import kotlin.reflect.KClass
 
 @Suppress("unused") // Used from Swift
 fun <T> Koin.getForNative(objCClass: ObjCClass): T? {

@@ -2,11 +2,11 @@ package com.hedvig.embarkx
 
 import com.hedvig.embarkx.apollo.apolloModule
 import com.hedvig.embarkx.embark.story.embarkStoryModule
-import kotlin.reflect.KClass
 import org.koin.core.Koin
 import org.koin.core.KoinApplication
 import org.koin.core.context.startKoin
 import org.koin.core.parameter.parametersOf
+import kotlin.reflect.KClass
 
 fun initializeDi(
     extraConfiguration: KoinApplication.() -> Unit = {},
