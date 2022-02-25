@@ -1,5 +1,6 @@
 import Flow
 import Foundation
+import shared
 
 
 
@@ -122,82 +123,16 @@ class EmbarkStore {
         }
     }
 
-    func passes(expression: GraphQL.BasicExpressionFragment) -> Bool {
-        if let binaryExpression = expression.asEmbarkExpressionBinary {
-            switch binaryExpression.expressionBinaryType {
-            case .equals: return getValueWithNull(key: binaryExpression.key) == binaryExpression.value
-            case .lessThan:
-                if let storeFloat = getValue(key: binaryExpression.key)?.floatValue {
-                    return storeFloat < binaryExpression.value.floatValue
-                }
-
-                return false
-            case .lessThanOrEquals:
-                if let storeFloat = getValue(key: binaryExpression.key)?.floatValue {
-                    return storeFloat <= binaryExpression.value.floatValue
-                }
-
-                return false
-            case .moreThan:
-                if let storeFloat = getValue(key: binaryExpression.key)?.floatValue {
-                    return storeFloat > binaryExpression.value.floatValue
-                }
-
-                return false
-            case .moreThanOrEquals:
-                if let storeFloat = getValue(key: binaryExpression.key)?.floatValue {
-                    return storeFloat >= binaryExpression.value.floatValue
-                }
-
-                return false
-            case .notEquals: return getValue(key: binaryExpression.key) != binaryExpression.value
-            case .__unknown: return false
-            }
-        }
-
-        if let unaryExpression = expression.asEmbarkExpressionUnary {
-            switch unaryExpression.expressionUnaryType {
-            case .always: return true
-            case .never: return false
-            case .__unknown: return false
-            }
-        }
-
+    func passes(expression: ExpressionFragment) -> Bool {
         return false
     }
 
-    func passes(expression: GraphQL.ExpressionFragment) -> Bool {
-        if let multiple = expression.asEmbarkExpressionMultiple {
-            switch multiple.expressionMultipleType {
-            case .and:
-                return multiple.subExpressions
-                    .map({ subExpression -> Bool in
-                        self.passes(expression: subExpression.fragments.basicExpressionFragment)
-                    })
-                    .allSatisfy({ passes in passes })
-            case .or:
-                return multiple.subExpressions
-                    .map { subExpression -> Bool in
-                        self.passes(expression: subExpression.fragments.basicExpressionFragment)
-                    }
-                    .contains(true)
-            case .__unknown: return false
-            }
-        }
-
-        return passes(expression: expression.fragments.basicExpressionFragment)
-    }
-
-    func passes(expression: GraphQL.MessageFragment.Expression) -> Bool {
-        passes(expression: expression.fragments.expressionFragment)
-    }
-
-    func shouldRedirectTo(redirect: GraphQL.EmbarkStoryQuery.Data.EmbarkStory.Passage.Redirect) -> String? {
-        if let unaryExpression = redirect.fragments.embarkRedirectSingle.asEmbarkRedirectUnaryExpression {
+    func shouldRedirectTo(redirect: EmbarkStoryQueryRedirect) -> String? {
+        if let unaryExpression = EmbarkStoryQueryRedirectCompanion.shared.asEmbarkRedirectUnaryExpression(redirect)  {
             if unaryExpression.unaryType == .always { return unaryExpression.to }
         }
 
-        if let binaryExpression = redirect.fragments.embarkRedirectSingle.asEmbarkRedirectBinaryExpression {
+        if let binaryExpression =  EmbarkStoryQueryRedirectCompanion.shared.asEmbarkRedirectBinaryExpression(redirect)  {
             switch binaryExpression.binaryType {
             case .equals:
                 if getValueWithNull(key: binaryExpression.key) == binaryExpression.value {
@@ -233,33 +168,7 @@ class EmbarkStore {
                 if getValueWithNull(key: binaryExpression.key) != binaryExpression.value {
                     return binaryExpression.to
                 }
-            case .__unknown: break
-            }
-        }
-
-        if let multipleExpression = redirect.fragments.embarkRedirectFragment
-            .asEmbarkRedirectMultipleExpressions
-        {
-            switch multipleExpression.multipleType {
-            case .and:
-                if multipleExpression.subExpressions
-                    .map({ subExpression -> Bool in
-                        self.passes(expression: subExpression.fragments.expressionFragment)
-                    })
-                    .allSatisfy({ passes in passes })
-                {
-                    return multipleExpression.to
-                }
-            case .or:
-                if multipleExpression.subExpressions
-                    .map({ subExpression -> Bool in
-                        self.passes(expression: subExpression.fragments.expressionFragment)
-                    })
-                    .contains(true)
-                {
-                    return multipleExpression.to
-                }
-            case .__unknown: break
+            default: break
             }
         }
 

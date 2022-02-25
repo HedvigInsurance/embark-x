@@ -15,7 +15,6 @@
 		3607853827C77C3E007421E1 /* EmbarkStoryNames.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360784F627C77C3E007421E1 /* EmbarkStoryNames.graphql.swift */; };
 		3607853927C77C3E007421E1 /* EmbarkPlans.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360784F727C77C3E007421E1 /* EmbarkPlans.graphql.swift */; };
 		3607853B27C77C3E007421E1 /* InsuranceProviders.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360784F927C77C3E007421E1 /* InsuranceProviders.graphql.swift */; };
-		3607853C27C77C3E007421E1 /* EmbarkStory.graphql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360784FA27C77C3E007421E1 /* EmbarkStory.graphql.swift */; };
 		3607853D27C77C3E007421E1 /* Passage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360784FC27C77C3E007421E1 /* Passage.swift */; };
 		3607853E27C77C3E007421E1 /* EmbarkMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360784FD27C77C3E007421E1 /* EmbarkMessages.swift */; };
 		3607853F27C77C3E007421E1 /* Embark+ShadowProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360784FE27C77C3E007421E1 /* Embark+ShadowProperties.swift */; };
@@ -308,6 +307,8 @@
 		36A1B20127C66972002B00CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A1B20027C66972002B00CE /* ContentView.swift */; };
 		36A1B20327C66973002B00CE /* AppAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36A1B20227C66973002B00CE /* AppAssets.xcassets */; };
 		36A1B20627C66973002B00CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36A1B20527C66973002B00CE /* Preview Assets.xcassets */; };
+		557116A227C8CF7600F2E4D2 /* KMPNativeCoroutinesAsync in Frameworks */ = {isa = PBXBuildFile; productRef = 557116A127C8CF7600F2E4D2 /* KMPNativeCoroutinesAsync */; };
+		557116A427C8CF7600F2E4D2 /* KMPNativeCoroutinesCore in Frameworks */ = {isa = PBXBuildFile; productRef = 557116A327C8CF7600F2E4D2 /* KMPNativeCoroutinesCore */; };
 		55E2DCB727C7E2E40068C072 /* Koin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E2DCB627C7E2E40068C072 /* Koin.swift */; };
 		55E2DCB927C7E4EF0068C072 /* ContentViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E2DCB827C7E4EF0068C072 /* ContentViewViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -321,7 +322,6 @@
 		360784F627C77C3E007421E1 /* EmbarkStoryNames.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbarkStoryNames.graphql.swift; sourceTree = "<group>"; };
 		360784F727C77C3E007421E1 /* EmbarkPlans.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbarkPlans.graphql.swift; sourceTree = "<group>"; };
 		360784F927C77C3E007421E1 /* InsuranceProviders.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceProviders.graphql.swift; sourceTree = "<group>"; };
-		360784FA27C77C3E007421E1 /* EmbarkStory.graphql.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbarkStory.graphql.swift; sourceTree = "<group>"; };
 		360784FC27C77C3E007421E1 /* Passage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Passage.swift; sourceTree = "<group>"; };
 		360784FD27C77C3E007421E1 /* EmbarkMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmbarkMessages.swift; sourceTree = "<group>"; };
 		360784FE27C77C3E007421E1 /* Embark+ShadowProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Embark+ShadowProperties.swift"; sourceTree = "<group>"; };
@@ -621,6 +621,8 @@
 				3607856A27C77D35007421E1 /* Swifter in Frameworks */,
 				36167D0B27C68466003D11A1 /* MarkdownKit in Frameworks */,
 				36167D0527C682CF003D11A1 /* SnapKit in Frameworks */,
+				557116A227C8CF7600F2E4D2 /* KMPNativeCoroutinesAsync in Frameworks */,
+				557116A427C8CF7600F2E4D2 /* KMPNativeCoroutinesCore in Frameworks */,
 				36167D5927C68665003D11A1 /* ApolloWebSocket in Frameworks */,
 				36167D0227C68257003D11A1 /* DynamicColor in Frameworks */,
 				36167C1327C67B69003D11A1 /* Flow in Frameworks */,
@@ -662,7 +664,6 @@
 				360784F627C77C3E007421E1 /* EmbarkStoryNames.graphql.swift */,
 				360784F727C77C3E007421E1 /* EmbarkPlans.graphql.swift */,
 				360784F927C77C3E007421E1 /* InsuranceProviders.graphql.swift */,
-				360784FA27C77C3E007421E1 /* EmbarkStory.graphql.swift */,
 			);
 			path = GraphQL;
 			sourceTree = "<group>";
@@ -1398,6 +1399,8 @@
 				36167D5627C68665003D11A1 /* Apollo */,
 				36167D5827C68665003D11A1 /* ApolloWebSocket */,
 				3607856927C77D35007421E1 /* Swifter */,
+				557116A127C8CF7600F2E4D2 /* KMPNativeCoroutinesAsync */,
+				557116A327C8CF7600F2E4D2 /* KMPNativeCoroutinesCore */,
 			);
 			productName = ios;
 			productReference = 36A1B1FB27C66972002B00CE /* ios.app */;
@@ -1438,6 +1441,7 @@
 				36167D0927C68466003D11A1 /* XCRemoteSwiftPackageReference "MarkdownKit" */,
 				36167D5527C68665003D11A1 /* XCRemoteSwiftPackageReference "apollo-ios" */,
 				3607856827C77D35007421E1 /* XCRemoteSwiftPackageReference "swifter" */,
+				557116A027C8CF7600F2E4D2 /* XCRemoteSwiftPackageReference "KMP-NativeCoroutines" */,
 			);
 			productRefGroup = 36A1B1FC27C66972002B00CE /* Products */;
 			projectDirPath = "";
@@ -1769,7 +1773,6 @@
 				36167D4C27C6861C003D11A1 /* FAQModels.swift in Sources */,
 				36167CD627C67CE8003D11A1 /* HostingView.swift in Sources */,
 				3607853E27C77C3E007421E1 /* EmbarkMessages.swift in Sources */,
-				3607853C27C77C3E007421E1 /* EmbarkStory.graphql.swift in Sources */,
 				36167CCB27C67CE8003D11A1 /* InvertColorSchemeModifier.swift in Sources */,
 				36167BE327C67800003D11A1 /* ImageTextAction.swift in Sources */,
 				36167CE427C67CE8003D11A1 /* SpringAnimationStyle.swift in Sources */,
@@ -2071,6 +2074,14 @@
 				minimumVersion = 0.49.1;
 			};
 		};
+		557116A027C8CF7600F2E4D2 /* XCRemoteSwiftPackageReference "KMP-NativeCoroutines" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rickclephas/KMP-NativeCoroutines.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2128,6 +2139,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 36167D5527C68665003D11A1 /* XCRemoteSwiftPackageReference "apollo-ios" */;
 			productName = ApolloWebSocket;
+		};
+		557116A127C8CF7600F2E4D2 /* KMPNativeCoroutinesAsync */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 557116A027C8CF7600F2E4D2 /* XCRemoteSwiftPackageReference "KMP-NativeCoroutines" */;
+			productName = KMPNativeCoroutinesAsync;
+		};
+		557116A327C8CF7600F2E4D2 /* KMPNativeCoroutinesCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 557116A027C8CF7600F2E4D2 /* XCRemoteSwiftPackageReference "KMP-NativeCoroutines" */;
+			productName = KMPNativeCoroutinesCore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

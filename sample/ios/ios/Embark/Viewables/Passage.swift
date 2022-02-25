@@ -2,16 +2,14 @@ import Flow
 import Form
 import Foundation
 import UIKit
-
-
-
+import shared
 
 struct Passage { let state: EmbarkState }
 
-typealias EmbarkPassage = GraphQL.EmbarkStoryQuery.Data.EmbarkStory.Passage
+typealias EmbarkPassage = EmbarkStoryQuery.Passage
 
 extension Passage: Viewable {
-    func materialize(events _: ViewableEvents) -> (UIView, Signal<GraphQL.EmbarkLinkFragment>) {
+    func materialize(events _: ViewableEvents) -> (UIView, Signal<EmbarkLinkFragment>) {
         let view = UIStackView()
         view.axis = .vertical
         view.distribution = .equalSpacing

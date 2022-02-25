@@ -1,5 +1,5 @@
 query EmbarkStory($storyName: String!, $locale: String!) {
-    embarkStory(name: $storyName, locale: $locale) {
+    graphqlEmbarkStory: embarkStory(name: $storyName, locale: $locale) {
         startPassage
         computedStoreValues {
             key

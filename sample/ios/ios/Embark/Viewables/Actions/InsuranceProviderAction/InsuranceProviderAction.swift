@@ -12,7 +12,7 @@ enum InsuranceWrapper {
     case external(EmbarkPassage.Action.AsEmbarkExternalInsuranceProviderAction)
     case previous(EmbarkPassage.Action.AsEmbarkPreviousInsuranceProviderAction)
 
-    var embarkLinkFragment: GraphQL.EmbarkLinkFragment {
+    var embarkLinkFragment: EmbarkLinkFragment {
         switch self {
         case let .external(data): return data.externalInsuranceProviderData.next.fragments.embarkLinkFragment
         case let .previous(data): return data.previousInsuranceProviderData.next.fragments.embarkLinkFragment
@@ -72,7 +72,7 @@ struct InsuranceProviderAction {
 }
 
 extension InsuranceProviderAction: Viewable {
-    func materialize(events _: ViewableEvents) -> (UIView, Signal<GraphQL.EmbarkLinkFragment>) {
+    func materialize(events _: ViewableEvents) -> (UIView, Signal<EmbarkLinkFragment>) {
         let bag = DisposeBag()
 
         let outerContainer = UIStackView()

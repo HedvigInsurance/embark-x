@@ -6,6 +6,7 @@ plugins {
     id("com.android.library")
     id("dev.petuska.npm.publish") // Enables bundling our JS target code into an NPM package
     id("com.apollographql.apollo3") // Enables GraphQL models codegen plus stuff like downloadApolloSchema gradle task
+    id("com.rickclephas.kmp.nativecoroutines") // Generates -Native version of suspend functions to be used from swift
 }
 
 kotlin {

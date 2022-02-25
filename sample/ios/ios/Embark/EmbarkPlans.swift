@@ -5,11 +5,12 @@ import Foundation
 import Presentation
 import SnapKit
 import UIKit
+import shared
 
 
 
 
-public typealias EmbarkStory = GraphQL.ChoosePlanQuery.Data.EmbarkStory
+public typealias EmbarkStory = GraphQLQuery.
 
 public struct EmbarkPlans {
     @Inject var client: ApolloClient

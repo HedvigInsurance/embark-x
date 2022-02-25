@@ -12,6 +12,7 @@ buildscript {
             .getByName("libs") as org.gradle.accessors.dm.LibrariesForLibs
         classpath(libs.android.gradlePlugin)
         classpath(libs.apollo.gradlePlugin)
+        classpath(libs.kmpNativeCoroutines.gradlePlugin)
         classpath(libs.kotlin.gradlePlugin)
         classpath(libs.npmPublish.gradlePlugin)
     }

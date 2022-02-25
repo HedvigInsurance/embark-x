@@ -289,7 +289,7 @@ extension GraphQLMap {
 }
 
 extension EmbarkState {
-    func handleApi(apiFragment: GraphQL.ApiFragment) -> Future<GraphQL.EmbarkLinkFragment?> {
+    func handleApi(apiFragment: GraphQL.ApiFragment) -> Future<EmbarkLinkFragment?> {
         handleApiRequest(apiFragment: apiFragment)
             .mapResult { result in
                 switch result {

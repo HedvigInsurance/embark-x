@@ -5,12 +5,13 @@ import shared
 struct ContentView: View {
     @StateObject private var viewModel: ContentViewViewModel = ContentViewViewModel()
     
+    @State private var result: Any? = nil
+    
     var body: some View {
-        let (_) = viewModel.result // Use embark result in some way
-        Text(shared.Greeting().greeting())
+        Text("\(result)")
             .padding()
             .task {
-                viewModel.fetchStory(story: "StoryName")
+                result = try? await viewModel.fetchStory(story: "StoryName")
             }
     }
 }

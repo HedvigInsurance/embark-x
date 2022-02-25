@@ -63,7 +63,7 @@ class GetEmbarkStoryUseCaseTest {
         apolloClient.enqueueTestResponse(
             operation = testQuery,
             data = EmbarkStoryQuery.Data {
-                embarkStory = null
+                graphqlEmbarkStory = null
             },
             errors = null
         )
