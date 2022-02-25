@@ -14,7 +14,7 @@ struct EmbarkDatePickerAction {
 }
 
 extension EmbarkDatePickerAction: Viewable {
-    func materialize(events _: ViewableEvents) -> (UIView, Signal<GraphQL.EmbarkLinkFragment>) {
+    func materialize(events _: ViewableEvents) -> (UIView, Signal<EmbarkLinkFragment>) {
         let bag = DisposeBag()
 
         let mainView = UIStackView()

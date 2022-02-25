@@ -14,7 +14,7 @@ struct EmbarkSelectAction {
 }
 
 extension EmbarkSelectAction: Viewable {
-    func materialize(events _: ViewableEvents) -> (UIView, Signal<GraphQL.EmbarkLinkFragment>) {
+    func materialize(events _: ViewableEvents) -> (UIView, Signal<EmbarkLinkFragment>) {
         let view = UIStackView()
         view.axis = .vertical
         view.spacing = 10
@@ -48,7 +48,7 @@ extension EmbarkSelectAction: Viewable {
                             .atValue { _ in $isSelectOptionLoading.value = true }
                             .mapLatestToFuture {
                                 result -> Future<
-                                    (GraphQL.EmbarkLinkFragment, ActionResponseData)
+                                    (EmbarkLinkFragment, ActionResponseData)
                                 > in
                                 let defaultLink = option.link.fragments
                                     .embarkLinkFragment

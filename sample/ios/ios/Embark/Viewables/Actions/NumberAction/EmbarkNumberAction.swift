@@ -27,7 +27,7 @@ struct EmbarkNumberAction {
 }
 
 extension EmbarkNumberAction: Viewable {
-    func materialize(events: ViewableEvents) -> (UIView, Signal<GraphQL.EmbarkLinkFragment>) {
+    func materialize(events: ViewableEvents) -> (UIView, Signal<EmbarkLinkFragment>) {
         let bag = DisposeBag()
 
         let view = UIStackView()

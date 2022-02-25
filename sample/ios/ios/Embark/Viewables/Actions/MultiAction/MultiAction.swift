@@ -14,7 +14,7 @@ struct MultiAction {
 }
 
 extension MultiAction: Viewable {
-    func materialize(events _: ViewableEvents) -> (UIView, Signal<GraphQL.EmbarkLinkFragment>) {
+    func materialize(events _: ViewableEvents) -> (UIView, Signal<EmbarkLinkFragment>) {
         let bag = DisposeBag()
 
         let layout = UICollectionViewFlowLayout()

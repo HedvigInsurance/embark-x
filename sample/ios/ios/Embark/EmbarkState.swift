@@ -22,9 +22,9 @@ public class EmbarkState {
     var edgePanGestureRecognizer: UIScreenEdgePanGestureRecognizer?
     let storySignal = ReadWriteSignal<GraphQL.EmbarkStoryQuery.Data.EmbarkStory?>(nil)
     let startPassageIDSignal = ReadWriteSignal<String?>(nil)
-    let passagesSignal = ReadWriteSignal<[GraphQL.EmbarkStoryQuery.Data.EmbarkStory.Passage]>([])
-    let currentPassageSignal = ReadWriteSignal<GraphQL.EmbarkStoryQuery.Data.EmbarkStory.Passage?>(nil)
-    let passageHistorySignal = ReadWriteSignal<[GraphQL.EmbarkStoryQuery.Data.EmbarkStory.Passage]>([])
+    let passagesSignal = ReadWriteSignal<[EmbarkPassage]>([])
+    let currentPassageSignal = ReadWriteSignal<EmbarkPassage?>(nil)
+    let passageHistorySignal = ReadWriteSignal<[EmbarkPassage]>([])
     let externalRedirectSignal = ReadWriteSignal<ExternalRedirect?>(nil)
     let bag = DisposeBag()
 
@@ -79,7 +79,7 @@ public class EmbarkState {
 
     func startAPIPassageHandling() {
         bag += currentPassageSignal.compactMap { $0 }
-            .mapLatestToFuture { passage -> Future<GraphQL.EmbarkLinkFragment?> in
+            .mapLatestToFuture { passage -> Future<EmbarkLinkFragment?> in
                 guard let apiFragment = passage.api?.fragments.apiFragment else {
                     return Future(error: ApiError.noApi)
                 }
@@ -163,8 +163,8 @@ public class EmbarkState {
     }
 
     private func handleRedirects(
-        passage: GraphQL.EmbarkStoryQuery.Data.EmbarkStory.Passage
-    ) -> GraphQL.EmbarkStoryQuery.Data.EmbarkStory.Passage? {
+        passage: EmbarkPassage
+    ) -> EmbarkPassage? {
         guard
             let passingRedirect = passage.redirects.first(where: { redirect in
                 store.shouldRedirectTo(redirect: redirect) != nil
@@ -172,7 +172,7 @@ public class EmbarkState {
         else {
             return nil
         }
-
+        
         if let binary = passingRedirect.asEmbarkRedirectBinaryExpression {
             store.setValue(key: binary.passedExpressionKey, value: binary.passedExpressionValue)
         } else if let unary = passingRedirect.asEmbarkRedirectUnaryExpression {

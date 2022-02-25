@@ -19,7 +19,7 @@ class GetEmbarkStoryUseCase(
             .query(EmbarkStoryQuery(storyName = embarkStoryName.name, locale = locale.rawValue))
             .executeSafely()
             .mapLeft { apolloError -> Error.Apollo(apolloError) }
-            .map(EmbarkStoryQuery.Data::embarkStory)
+            .map(EmbarkStoryQuery.Data::graphqlEmbarkStory)
             .leftIfNull { Error.NoStoryFound }
             .map(EmbarkStory::fromDto)
     }
@@ -36,7 +36,7 @@ data class EmbarkStory(
     val computedStoreValues: List<EmbarkStoryQuery.ComputedStoreValue>?,
 ) {
     companion object {
-        fun fromDto(dto: EmbarkStoryQuery.EmbarkStory): EmbarkStory {
+        fun fromDto(dto: EmbarkStoryQuery.GraphqlEmbarkStory): EmbarkStory {
             return EmbarkStory(
                 dto.passages,
                 dto.startPassage,

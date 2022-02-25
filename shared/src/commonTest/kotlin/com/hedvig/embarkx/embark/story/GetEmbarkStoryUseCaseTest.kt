@@ -16,11 +16,11 @@ import com.hedvig.giraffe.type.Locale
 import io.kotest.matchers.should
 import io.kotest.matchers.shouldNot
 import io.kotest.matchers.types.beOfType
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import org.koin.core.context.stopKoin
 import kotlin.test.AfterTest
 import kotlin.test.BeforeTest
 import kotlin.test.Test
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import org.koin.core.context.stopKoin
 
 @OptIn(ApolloExperimental::class, ExperimentalCoroutinesApi::class)
 class GetEmbarkStoryUseCaseTest {
@@ -63,7 +63,7 @@ class GetEmbarkStoryUseCaseTest {
         apolloClient.enqueueTestResponse(
             operation = testQuery,
             data = EmbarkStoryQuery.Data {
-                embarkStory = null
+                graphqlEmbarkStory = null
             },
             errors = null
         )

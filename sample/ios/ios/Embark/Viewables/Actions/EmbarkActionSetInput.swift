@@ -61,13 +61,13 @@ struct EmbarkActionSetInputData {
     }
 
     var actions: [Action]
-    let link: GraphQL.EmbarkLinkFragment
+    let link: EmbarkLinkFragment
     let api: GraphQL.ApiFragment?
     let state: EmbarkState
 }
 
 extension EmbarkActionSetInputData: Viewable {
-    func materialize(events _: ViewableEvents) -> (UIView, Signal<GraphQL.EmbarkLinkFragment>) {
+    func materialize(events _: ViewableEvents) -> (UIView, Signal<EmbarkLinkFragment>) {
         let view = UIStackView()
         view.axis = .vertical
         view.spacing = 10

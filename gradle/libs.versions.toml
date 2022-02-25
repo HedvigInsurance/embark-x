@@ -12,6 +12,7 @@ kotlin = "1.6.10"
 # Other versions sorted alphabetically
 arrowKt = "1.0.1"
 coroutines = "1.6.0"
+kmpNativeCoroutines = "0.11.3"
 koin = "3.1.5"
 npmPublish = "2.1.2"
 
@@ -19,6 +20,7 @@ npmPublish = "2.1.2"
 # Gradle plugins
 android-gradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "androidGradlePlugin" }
 apollo-gradlePlugin = { module = "com.apollographql.apollo3:apollo-gradle-plugin", version.ref = "apollo" }
+kmpNativeCoroutines-gradlePlugin = { module = "com.rickclephas.kmp:kmp-nativecoroutines-gradle-plugin", version.ref = "kmpNativeCoroutines" }
 kotlin-gradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 npmPublish-gradlePlugin = { module = "dev.petuska.npm.publish:dev.petuska.npm.publish.gradle.plugin", version.ref = "npmPublish" }
 

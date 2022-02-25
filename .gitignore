@@ -11,6 +11,7 @@
 local.properties
 EmbarkX-*.zip
 /sample/ios/ios.xcodeproj/project.xcworkspace/xcuserdata/*
+/sample/ios/ios.xcodeproj/xcuserdata/*
 
 
 # Apollo related files
