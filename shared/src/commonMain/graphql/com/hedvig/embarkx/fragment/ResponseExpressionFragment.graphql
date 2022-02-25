@@ -1,0 +1,6 @@
+fragment ResponseExpressionFragment on EmbarkResponseExpression {
+    text
+    expressions {
+        ...ExpressionFragment
+    }
+}

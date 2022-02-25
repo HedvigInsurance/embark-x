@@ -4,7 +4,8 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
-    id("dev.petuska.npm.publish")
+    id("dev.petuska.npm.publish") // Enables bundling our JS target code into an NPM package
+    id("com.apollographql.apollo3") // Enables GraphQL models codegen plus stuff like downloadApolloSchema gradle task
 }
 
 kotlin {
@@ -24,7 +25,10 @@ kotlin {
 
     sourceSets {
         all {
-            languageSettings.optIn("kotlin.js.ExperimentalJsExport")
+            languageSettings {
+                optIn("kotlin.js.ExperimentalJsExport")
+                optIn("kotlin.RequiresOptIn")
+            }
         }
 
         val commonMain by getting {
@@ -38,6 +42,7 @@ kotlin {
         }
         val commonTest by getting {
             dependencies {
+                implementation(libs.apollo.testingSupport)
                 implementation(libs.coroutines.test)
                 implementation(libs.koin.test)
 
@@ -94,7 +99,7 @@ kotlin {
     }
 }
 
-android {
+android { // From plugin id: com.android.library
     compileSdk = libs.versions.compileSdkVersion.get().toInt()
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
@@ -103,12 +108,55 @@ android {
     }
 }
 
-npmPublishing {
+npmPublishing { // From plugin id: dev.petuska.npm.publish
     organization = "hedviginsurance"
 
     publications {
         named("js") {
             version = rootProject.version.toString()
         }
+    }
+}
+
+apollo { // From plugin id: com.apollographql.apollo3
+    service("giraffe") {
+        codegenModels.set(com.apollographql.apollo3.compiler.MODELS_RESPONSE_BASED)
+        flattenModels.set(true)
+
+        packageName.set("com.hedvig.giraffe")
+        srcDir(file("src/commonMain/graphql/com/hedvig/embarkx"))
+        schemaFile.set(file("src/commonMain/graphql/com/hedvig/embarkx/schema.graphqls"))
+
+        introspection {
+            endpointUrl.set("https://graphql.dev.hedvigit.com/graphql")
+            schemaFile.set(file("src/commonMain/graphql/com/hedvig/embarkx/schema.graphqls"))
+        }
+
+        // Test builders
+        generateKotlinModels.set(true)
+        generateTestBuilders.set(true)
+
+        alwaysGenerateTypesMatching.add("Locale")
+    }
+}
+
+// Workaround for https://github.com/HedvigInsurance/key-gear/pull/39
+tasks.withType(com.apollographql.apollo3.gradle.internal.ApolloDownloadSchemaTask::class.java) {
+    doLast {
+        val downloadedSchema = file("src/commonMain/graphql/com/hedvig/embarkx/schema.graphqls")
+        val patchedSchema = file("src/commonMain/graphql/com/hedvig/embarkx/schema.graphqls")
+        patchedSchema.writeText(
+            downloadedSchema.readText()
+                .replace(
+                    oldValue = "\"\"\"${System.lineSeparator()}  \\\"\"\"",
+                    newValue = "\"\"\"",
+                    ignoreCase = false
+                )
+                .replace(
+                    oldValue = "\\\"\"\"${System.lineSeparator()}  \"\"\"",
+                    newValue = "\"\"\"",
+                    ignoreCase = false
+                )
+        )
     }
 }

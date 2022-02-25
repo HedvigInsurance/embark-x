@@ -6,7 +6,7 @@ on:
       - main
 jobs:
   run_unit_tests:
-    runs-on: ubuntu-latest
+    runs-on: macos-11
     steps:
       - uses: actions/checkout@v2
       - name: Setup JDK 11
@@ -15,6 +15,8 @@ jobs:
           java-version: '11'
           distribution: 'zulu'
           cache: 'gradle'
+      - name: Download Apollo Schema
+        run: ./gradlew shared:downloadGiraffeApolloSchema
       - name: Run Unit-tests
         run: ./gradlew testDebugUnitTest
       - name: Report Test-results
