@@ -49,4 +49,14 @@ class EmbarkStoreTest {
 
         store.get("foo") shouldBe "bar"
     }
+
+    @Test
+    fun shouldGetListFromStore() {
+        val store = EmbarkStore()
+
+        store.putArray("foo", arrayOf("bar", "baz"))
+        store.commit()
+
+        store.getArray("foo") shouldBe arrayOf("bar", "baz")
+    }
 }
